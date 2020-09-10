@@ -34,7 +34,7 @@ int main(){
 	system("chcp 1251 > nul");
 	
 	while(1){
-		printf("1.Добавить узел\n2.Удалить узел\n3.Печать дерева\n0.Выход\n");
+		printf("1.Add element\n2.Delete element\n3.Print elements\n0.Exit program\n");
 		scanf("%d", &choice);
 		
 		switch(choice){
@@ -46,19 +46,19 @@ int main(){
 				break;	
 			case 3:
 				if(root==NULL){ 
-					printf("Вы не добавили элементов!\n");
+					printf("You have not added elements!\n");
 					break; 
 				}
-				printf("Прямой обход:\t\t");
+				printf("Direct print: \t\t");
 				direct_print(root);
 				printf("\n");
-				printf("Обратный обход:\t\t");
+				printf("Reverse print:\t\t");
 				converse_print(root);
 				printf("\n");
-				printf("Симметричный обход:\t");
+				printf("Symmetrical print:\t");
 				symmetrical_print(root);
 				printf("\n");
-				printf("Обход в ширину:\t\t\t");
+				printf("Broad print:\t\t\t");
 				wide_print(root);
 				printf("\n");
 				break;
@@ -74,7 +74,7 @@ node* init_tree(node *root){
 	
 	root = (node*)malloc(sizeof(node));
 	
-	printf("Введите значение: ");
+	printf("Enter the value: ");
 	scanf("%d", &root->num);
 	
 	root->parent = NULL;
@@ -95,13 +95,13 @@ node* add_element_to_tree(node *root){
 	node *p = root;
 	node *parent;
 	
-	printf("Введите значение: ");
+	printf("Enter the value: ");
 	scanf("%d", &num);
 	
 	while(p!=NULL){
 		parent = p;
 		if(num == p->num){
-			printf("Такое число уже есть!\n");
+			printf("The same element already exists in the tree!\n");
 			return root;	
 		}else if(num < p->num){
 			p = p->left;
@@ -127,17 +127,17 @@ node* add_element_to_tree(node *root){
 
 node* delete_element(node *root){
 	if(root == NULL){
-		printf("Вы не добавили элементов!\n");
+		printf("You have not added elements!\n");
 		return root;
 	}
 	
 	int num;
-	int flag=0; //Проверка наличия введенного числа
+	int flag=0;
 	node *p = root;
 	node *parent = root->parent;
 	node *temp,*min,*max;
 	
-	printf("Введите значение для удаления: ");
+	printf("Enter the value to deleting ");
 	scanf("%d", &num);
 	
 	while(p!=NULL){
@@ -153,11 +153,11 @@ node* delete_element(node *root){
 		}
 	}
 	if(flag==0){
-		printf("Такого числа нет!\n");
+		printf("No such element exists!\n");
 		return root;
 	}
 	
-	if(p->left == NULL && p->right == NULL){	//Удаление листа дерева
+	if(p->left == NULL && p->right == NULL){	//Deleting tree leaf
 		if(parent != NULL){
 			if(parent->left == p){
 				parent->left  = NULL;
@@ -170,7 +170,7 @@ node* delete_element(node *root){
 			free(p);
 			return NULL;
 		}
-	}else if(p->left != NULL && p->right == NULL){	//Удаление, если слева есть элемент, а справа нет
+	}else if(p->left != NULL && p->right == NULL){	//Left child exists, Right child does not exists
 		if(parent != NULL){
 			if(parent->left == p){
 				parent->left  = p->left;
@@ -187,7 +187,7 @@ node* delete_element(node *root){
 			free(p);
 			return temp;
 		}
-	}else if(p->left == NULL && p->right != NULL){	//Удаление, если справа есть элемент, а слева нет
+	}else if(p->left == NULL && p->right != NULL){	//Left child does not exists, Right child exists
 		if(parent != NULL){
 			if(parent->left == p){
 				parent->left  = p->right;
@@ -204,7 +204,7 @@ node* delete_element(node *root){
 			free(p);
 			return temp;
 		}
-	}else if(p->left != NULL && p->right != NULL){	//Удаление, если справа и слева есть элементы
+	}else if(p->left != NULL && p->right != NULL){	//Left child exists, Right child exists
 		if(parent != NULL){
 			if(parent->left == p){
 				parent->left  = p->right;
@@ -272,7 +272,7 @@ void wide_print(node *root){
 	head = push_back(head,root);
 	queue *temp = head;
 	
-	while(temp != NULL){ 	//Добавление элементов в очередь
+	while(temp != NULL){
 		printf("%-6d", temp->num);
 		if(temp->left  != NULL){
 			head = push_back(head,temp->left);
@@ -341,10 +341,3 @@ queue* delete_queue(queue *head){
 	}
 	return head;
 }
-
-
-
-
-
-
-
