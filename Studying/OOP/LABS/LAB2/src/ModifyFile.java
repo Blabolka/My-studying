@@ -1,5 +1,7 @@
+
 import java.io.*;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModifyFile {
 
@@ -11,38 +13,15 @@ public class ModifyFile {
         fileToWrite = new File(fileWriterName);
     }
 
-    void copyContent(){
+    public void copyContent(){
         try(BufferedReader br = new BufferedReader(new FileReader(fileToRead));
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))) {
             bw.write("КОПИРОВАНИЕ КОНТЕНТА ФАЙЛА" + System.lineSeparator());
 
             String line;
-            while ((line = br.readLine()) != null){
-                bw.write(line + System.lineSeparator());
-            }
-            bw.write(System.lineSeparator());
-
-        }catch (IOException ex){
-        }
-    }
-
-    void splitStringIntoSentences() {
-
-        try(BufferedReader br = new BufferedReader(new FileReader(fileToRead));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))) {
-            bw.write("РАЗБИЕНИЕ ТЕКСТА НА ПРЕДЛОЖЕНИЯ" + System.lineSeparator());
-
-            String line;
             StringBuffer sb = new StringBuffer();
-            while( (line = br.readLine()) != null){
-                for (int i = 0; i < line.length(); i++) {
-                    if(line.charAt(i) == '.'){
-                        bw.write(sb.toString() + System.lineSeparator());
-                        sb.setLength(0);
-                    }else{
-                        sb.append(line.charAt(i));
-                    }
-                }
+            while ((line = br.readLine()) != null){
+                sb.append(line + System.lineSeparator());
             }
             bw.write(sb.toString() + System.lineSeparator());
 
@@ -50,22 +29,32 @@ public class ModifyFile {
         }
     }
 
-    void splitStringIntoWords(){
+    public void splitStringBySeparator(String separator) {
 
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))){
-            bw.write("РАЗБИЕНИЕ ТЕКСТА НА СЛОВА И СЛОВОСОЧЕТАНИЯ" + System.lineSeparator());
+        try(BufferedReader br = new BufferedReader(new FileReader(fileToRead));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))) {
+            bw.write("РАЗБИЕНИЕ ТЕКСТА НА ПРЕДЛОЖЕНИЯ ПО РАЗДЕЛИТЕЛЮ '" + separator + "'" + System.lineSeparator());
 
-            ArrayList<String> arrayList = getAllWordsFromFile();
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while( (line = br.readLine()) != null){
+                String[] sentences;
+                if(separator.equals(".")){
+                    sentences = line.split("\\.");
+                }else{
+                    sentences = line.split(separator);
+                }
 
-            for(int i=0 ; i < arrayList.size() ; i++){
-                bw.write(arrayList.get(i) + System.lineSeparator());
+                for (int i = 0; i < sentences.length; i++) {
+                    sb.append(sentences[i]).append(System.lineSeparator());
+                }
             }
-
+            bw.write(sb.toString() + System.lineSeparator());
         }catch (IOException ex){
         }
     }
 
-    void countNumberOfWords(){
+    public void countNumberOfWords(){
 
         try(BufferedReader br = new BufferedReader(new FileReader(fileToRead));
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))){
@@ -74,21 +63,18 @@ public class ModifyFile {
 
             int counter = 0;
             String line;
-            while( (line = br.readLine()) != null ){
-                for(int i=0 ; i<line.length() ; i++){
-                    if(line.charAt(i) == ' '){
-                        counter++;
-                    }
-                }
+            while( (line = br.readLine()) != null){
+                String[] words = line.split(" ");
+                counter += words.length;
             }
-            bw.write("КОЛИЧЕСТВО СЛОВ: " + counter + System.lineSeparator() + System.lineSeparator());
+            bw.write("КОЛИЧЕСТВО СЛОВ: "+ counter + System.lineSeparator() + System.lineSeparator());
 
         }catch(IOException ex){
 
         }
     }
 
-    void countNumberOfSymbols(){
+    public void countNumberOfSymbols(){
 
         try(BufferedReader br = new BufferedReader(new FileReader(fileToRead));
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))){
@@ -107,61 +93,178 @@ public class ModifyFile {
         }
     }
 
-    void changeFirstSybolOfEveryWordToUppercase(){
+    public void changeFirstSymbolOfEveryWordToUppercase(){
 
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true))){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true));
+            BufferedReader br = new BufferedReader(new FileReader(fileToRead))){
 
             bw.write("ЗАМЕНА ВСЕХ ПЕРВЫХ СТРОЧНЫХ БУКВ В СЛОВАХ НА ПРОПИСНУЮ" + System.lineSeparator());
 
-            ArrayList<String> arrayList = getAllWordsFromFile();
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while( (line = br.readLine()) != null){
+                String[] words = line.split("\\s");
 
-            for (int i = 0; i < arrayList.size(); i++) {
-                if(arrayList.get(i) != null || !arrayList.get(i).equals("")){
-                    arrayList.set(i, arrayList.get(i).substring(0,1).toUpperCase() + arrayList.get(i).substring(1));
-                    bw.write(arrayList.get(i) + " ");
+                for (int i = 0; i < words.length; i++) {
+                    sb.append(words[i].substring(0, 1).toUpperCase()).append(words[i].substring(1)).append(" ");
                 }
+                sb.append(System.lineSeparator()).append(System.lineSeparator());
+                bw.write(sb.toString());
             }
 
         }catch(IOException ex){
         }
     }
 
-    void clearFile(){
+    public void changeEverySecondWordToUpperCase(){
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true));
+            BufferedReader br = new BufferedReader(new FileReader(fileToRead))){
+
+            bw.write("ЗАМЕНА КАЖДОГО ВТОРОГО СЛОВА НА ПРОПИСНОЕ" + System.lineSeparator());
+
+            int counter = 0;
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while( (line = br.readLine()) != null){
+                String[] words = line.split("\\s");
+
+                for (int i = 0; i < words.length; i++) {
+                    counter++;
+                    if(counter%2 == 0){
+                        sb.append(words[i].toUpperCase()).append(" ");
+                    }else{
+                        sb.append(words[i]).append(" ");
+                    }
+                }
+                sb.append(System.lineSeparator()).append(System.lineSeparator());
+                bw.write(sb.toString());
+            }
+
+        }catch(IOException ex){
+        }
+    }
+
+    public void createNewWordsFromOld(){
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true));
+            BufferedReader br = new BufferedReader(new FileReader(fileToRead))){
+
+            bw.write("СОЗДАНИЕ НОВОГО СЛОВА ИЗ ПЕРВЫХ И ПОСЛЕДНИХ ДВУХ БУКВ СТАРОГО" + System.lineSeparator());
+
+            String line;
+            StringBuilder sbOldWord = new StringBuilder();
+            StringBuilder sbNewWord = new StringBuilder();
+            while((line = br.readLine()) != null){
+                String[] words = line.split(" ");
+
+                for (int i = 0; i < words.length; i++) {
+
+                    //Get string without symbols
+                    for (int j = 0; j < words[i].length(); j++) {
+                        if(Character.isLetter(words[i].charAt(j))){
+                            sbOldWord.append(words[i].charAt(j));
+                        }
+                    }
+
+                    if(sbOldWord.length()>=4){
+                        sbNewWord.append(sbOldWord.toString().charAt(0));
+                        sbNewWord.append(sbOldWord.toString().charAt(1));
+                        sbNewWord.append(sbOldWord.toString().charAt(sbOldWord.toString().length()-2));
+                        sbNewWord.append(sbOldWord.toString().charAt(sbOldWord.toString().length()-1));
+
+                        line = line.replace(sbOldWord.toString(), sbNewWord.toString());
+                    }
+                    sbOldWord.setLength(0);
+                    sbNewWord.setLength(0);
+                }
+                bw.write(line + System.lineSeparator());
+            }
+            bw.write(System.lineSeparator());
+
+
+        }catch(IOException ex){
+        }
+    }
+
+    public void changeAllDigitsToString(){
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true));
+            BufferedReader br = new BufferedReader(new FileReader(fileToRead))){
+
+            bw.write("ЗАМЕНА КАЖДОЙ ЦИФРЫ НА СТРОКУ:" + System.lineSeparator());
+
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while((line = br.readLine()) != null){
+                line = line.replace("0", "Zero");
+                line = line.replace("1", "One");
+                line = line.replace("2", "Two");
+                line = line.replace("3", "Three");
+                line = line.replace("4", "Four");
+                line = line.replace("5", "Five");
+                line = line.replace("6", "Six");
+                line = line.replace("7", "Seven");
+                line = line.replace("8", "Eight");
+                line = line.replace("9", "Nine");
+
+                sb.append(line).append(System.lineSeparator());
+            }
+            bw.write(sb.toString() + System.lineSeparator());
+
+        }catch (IOException ex){
+        }
+    }
+
+    public void countTheNumberOfOccurrencesOfEachWord(){
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite, true));
+            BufferedReader br = new BufferedReader(new FileReader(fileToRead))){
+
+            bw.write("ПОДСЧЁТ КОЛИЧЕСТВА ВХОЖДЕНИЙ КАЖДОГО ОТДЕЛЬНОГО СЛОВА" + System.lineSeparator());
+
+            String line;
+            StringBuilder sb = new StringBuilder();
+
+            Map<String, Integer> countOfOccurence = new HashMap<>();
+
+            while((line = br.readLine()) != null){
+                String[] wordsWithSymbols = line.split(" ");
+
+                for (String wordsWithSymbol : wordsWithSymbols) {
+                    for (int j = 0; j < wordsWithSymbol.length(); j++) {
+                        if (Character.isLetter(wordsWithSymbol.charAt(j))) {
+                            sb.append(wordsWithSymbol.charAt(j));
+                        }
+                    }
+
+                    if(sb.length() != 0){
+                        if (!countOfOccurence.containsKey(sb.toString())) {
+                            countOfOccurence.put(sb.toString(), 1);
+                        } else {
+                            countOfOccurence.put(sb.toString(), countOfOccurence.get(sb.toString())+1);
+                        }
+
+                        sb.setLength(0);
+                    }
+                }
+            }
+
+            for (Map.Entry<String, Integer> entry : countOfOccurence.entrySet()) {
+                sb.append(entry.getKey()).append(" = ").append(entry.getValue()).append(System.lineSeparator());
+            }
+
+            bw.write(sb.toString());
+
+        }catch(IOException ex){
+        }
+    }
+
+    public void clearFile(){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite))){
             bw.write("");
         }catch (IOException ex){
             ex.printStackTrace();
         }
     }
-
-    private ArrayList<String> getAllWordsFromFile(){
-
-        ArrayList<String> arrayList = new ArrayList<>();
-
-        try(BufferedReader br = new BufferedReader(new FileReader(fileToRead))){
-
-            String line;
-            StringBuffer sb = new StringBuffer();
-            while( (line = br.readLine()) != null){
-                for (int i = 0; i < line.length(); i++) {
-                    if(line.charAt(i) == ' '){
-                        if(sb.length() != 0){
-                            arrayList.add(sb.toString());
-                            sb.setLength(0);
-                        }
-                    }else{
-                        sb.append(line.charAt(i));
-                    }
-                }
-                sb.append(System.lineSeparator());
-                arrayList.add(sb.toString());
-                sb.setLength(0);
-            }
-
-        }catch (IOException ex){
-        }
-
-        return arrayList;
-    }
-
 }

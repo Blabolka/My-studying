@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcc2e7ea-6fac-42d3-823e-1bb3dd7a5cd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digital values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Digital values.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modified Digit Values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Modified Digit Values.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modified Flyby missions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Modified Flyby missions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ModifyFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModifyFile.java" afterDir="false" />
     </list>
@@ -24,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="88" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
+            <state relative-caret-position="105">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -33,10 +31,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ModifyFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="102" column="104" selection-start-line="102" selection-start-column="104" selection-end-line="102" selection-end-column="104" />
+            <state relative-caret-position="294">
+              <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#ModifyFile#0;class#ModifyFile#0" />
+                <element signature="method#copyContent#0;class#ModifyFile#0" />
+                <element signature="method#splitStringIntoSentences#0;class#ModifyFile#0" />
+                <element signature="method#countNumberOfWords#0;class#ModifyFile#0" />
+                <element signature="method#countNumberOfSymbols#0;class#ModifyFile#0" />
+                <element signature="method#changeFirstSymbolOfEveryWordToUppercase#0;class#ModifyFile#0" />
+                <element signature="method#changeEverySecondWordToUpperCase#0;class#ModifyFile#0" />
+                <element signature="method#createNewWordsFromOld#0;class#ModifyFile#0" />
+                <element signature="method#changeAllDigitsToString#0;class#ModifyFile#0" />
+                <element signature="method#countTheNumberOfOccurrencesOfEachWord#0;class#ModifyFile#0" />
+                <element signature="method#clearFile#0;class#ModifyFile#0" />
               </folding>
             </state>
           </provider>
@@ -65,7 +74,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -82,11 +91,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunDashboard">
@@ -131,7 +141,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -141,7 +151,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32987553" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33817428" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -193,20 +203,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/Скачаные файлы/Зброд телеги/Practice_6_src/Practice_6_src/StringUtiliztionExample/src/oop/examples/string/utilization/printer/SplittedStringPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_231/src.zip!/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="514" column="29" selection-start-line="514" selection-start-column="29" selection-end-line="514" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_231/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="2065" column="18" selection-start-line="2065" selection-start-column="18" selection-end-line="2065" selection-end-column="18" />
+          <folding>
+            <element signature="e#94598#94599#0" expanded="true" />
+            <element signature="e#94636#94637#0" expanded="true" />
+            <element signature="e#111196#111197#0" expanded="true" />
+            <element signature="e#111251#111252#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ModifyFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="102" column="104" selection-start-line="102" selection-start-column="104" selection-end-line="102" selection-end-column="104" />
+        <state relative-caret-position="294">
+          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#ModifyFile#0;class#ModifyFile#0" />
+            <element signature="method#copyContent#0;class#ModifyFile#0" />
+            <element signature="method#splitStringIntoSentences#0;class#ModifyFile#0" />
+            <element signature="method#countNumberOfWords#0;class#ModifyFile#0" />
+            <element signature="method#countNumberOfSymbols#0;class#ModifyFile#0" />
+            <element signature="method#changeFirstSymbolOfEveryWordToUppercase#0;class#ModifyFile#0" />
+            <element signature="method#changeEverySecondWordToUpperCase#0;class#ModifyFile#0" />
+            <element signature="method#createNewWordsFromOld#0;class#ModifyFile#0" />
+            <element signature="method#changeAllDigitsToString#0;class#ModifyFile#0" />
+            <element signature="method#countTheNumberOfOccurrencesOfEachWord#0;class#ModifyFile#0" />
+            <element signature="method#clearFile#0;class#ModifyFile#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="88" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
+        <state relative-caret-position="105">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

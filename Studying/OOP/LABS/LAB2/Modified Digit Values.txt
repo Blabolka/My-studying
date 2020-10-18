@@ -1,7 +1,7 @@
 КОПИРОВАНИЕ КОНТЕНТА ФАЙЛА
 Digital values. Each digit in a number system represents an integer. For example, in decimal the digit "1" represents the integer one, and in the hexadecimal system, the letter "A" represents the number ten. A positional number system has one unique digit for each integer from zero up to, but not including, the radix of the number system. Thus in the positional decimal system, the numbers 0 to 9 can be expressed using their respective numerals "0" to "9" in the rightmost "units" position. The number 12 can be expressed with the numeral "2" in the units position, and with the numeral "1" in the "tens" position, to the left of the "2" while the number 312 can be expressed by three numerals: "3" in the "hundreds" position, "1" in the "tens" position, and "2" in the "units" position.
 
-РАЗБИЕНИЕ ТЕКСТА НА ПРЕДЛОЖЕНИЯ
+РАЗБИЕНИЕ ТЕКСТА НА ПРЕДЛОЖЕНИЯ ПО РАЗДЕЛИТЕЛЮ '.'
 Digital values
  Each digit in a number system represents an integer
  For example, in decimal the digit "1" represents the integer one, and in the hexadecimal system, the letter "A" represents the number ten
@@ -9,7 +9,7 @@ Digital values
  Thus in the positional decimal system, the numbers 0 to 9 can be expressed using their respective numerals "0" to "9" in the rightmost "units" position
  The number 12 can be expressed with the numeral "2" in the units position, and with the numeral "1" in the "tens" position, to the left of the "2" while the number 312 can be expressed by three numerals: "3" in the "hundreds" position, "1" in the "tens" position, and "2" in the "units" position
 
-РАЗБИЕНИЕ ТЕКСТА НА СЛОВА И СЛОВОСОЧЕТАНИЯ
+РАЗБИЕНИЕ ТЕКСТА НА ПРЕДЛОЖЕНИЯ ПО РАЗДЕЛИТЕЛЮ ' '
 Digital
 values.
 Each
@@ -151,11 +151,77 @@ the
 position.
 
 ПОДСЧЁТ КОЛИЧЕСТВА СЛОВ
-КОЛИЧЕСТВО СЛОВ: 138
+КОЛИЧЕСТВО СЛОВ: 139
 
 ПОДСЧЁТ КОЛИЧЕСТВА СИМВОЛОВ
 КОЛИЧЕСТВО СИМВОЛОВ: 790
 
 ЗАМЕНА ВСЕХ ПЕРВЫХ СТРОЧНЫХ БУКВ В СЛОВАХ НА ПРОПИСНУЮ
-Digital Values. Each Digit In A Number System Represents An Integer. For Example, In Decimal The Digit "1" Represents The Integer One, And In The Hexadecimal System, The Letter "A" Represents The Number Ten. A Positional Number System Has One Unique Digit For Each Integer From Zero Up To, But Not Including, The Radix Of The Number System. Thus In The Positional Decimal System, The Numbers 0 To 9 Can Be Expressed Using Their Respective Numerals "0" To "9" In The Rightmost "units" Position. The Number 12 Can Be Expressed With The Numeral "2" In The Units Position, And With The Numeral "1" In The "tens" Position, To The Left Of The "2" While The Number 312 Can Be Expressed By Three Numerals: "3" In The "hundreds" Position, "1" In The "tens" Position, And "2" In The "units" Position.
- 
+Digital Values. Each Digit In A Number System Represents An Integer. For Example, In Decimal The Digit "1" Represents The Integer One, And In The Hexadecimal System, The Letter "A" Represents The Number Ten. A Positional Number System Has One Unique Digit For Each Integer From Zero Up To, But Not Including, The Radix Of The Number System. Thus In The Positional Decimal System, The Numbers 0 To 9 Can Be Expressed Using Their Respective Numerals "0" To "9" In The Rightmost "units" Position. The Number 12 Can Be Expressed With The Numeral "2" In The Units Position, And With The Numeral "1" In The "tens" Position, To The Left Of The "2" While The Number 312 Can Be Expressed By Three Numerals: "3" In The "hundreds" Position, "1" In The "tens" Position, And "2" In The "units" Position. 
+
+ЗАМЕНА КАЖДОГО ВТОРОГО СЛОВА НА ПРОПИСНОЕ
+Digital VALUES. Each DIGIT in A number SYSTEM represents AN integer. FOR example, IN decimal THE digit "1" represents THE integer ONE, and IN the HEXADECIMAL system, THE letter "A" represents THE number TEN. A POSITIONAL number SYSTEM has ONE unique DIGIT for EACH integer FROM zero UP to, BUT not INCLUDING, the RADIX of THE number SYSTEM. Thus IN the POSITIONAL decimal SYSTEM, the NUMBERS 0 TO 9 CAN be EXPRESSED using THEIR respective NUMERALS "0" TO "9" IN the RIGHTMOST "units" POSITION. The NUMBER 12 CAN be EXPRESSED with THE numeral "2" in THE units POSITION, and WITH the NUMERAL "1" IN the "TENS" position, TO the LEFT of THE "2" WHILE the NUMBER 312 CAN be EXPRESSED by THREE numerals: "3" in THE "hundreds" POSITION, "1" IN the "TENS" position, AND "2" IN the "UNITS" position. 
+
+ЗАМЕНА КАЖДОЙ ЦИФРЫ НА СТРОКУ:
+Digital values. Each digit in a number system represents an integer. For example, in decimal the digit "One" represents the integer one, and in the hexadecimal system, the letter "A" represents the number ten. A positional number system has one unique digit for each integer from zero up to, but not including, the radix of the number system. Thus in the positional decimal system, the numbers Zero to Nine can be expressed using their respective numerals "Zero" to "Nine" in the rightmost "units" position. The number OneTwo can be expressed with the numeral "Two" in the units position, and with the numeral "One" in the "tens" position, to the left of the "Two" while the number ThreeOneTwo can be expressed by three numerals: "Three" in the "hundreds" position, "One" in the "tens" position, and "Two" in the "units" position.
+
+СОЗДАНИЕ НОВОГО СЛОВА ИЗ ПЕРВЫХ И ПОСЛЕДНИХ ДВУХ БУКВ СТАРОГО
+Dial vaes. Each diit in a nuer syem rets an iner. For exle, in deal the diit "1" rets the iner one, and in the hexadeal syem, the leer "A" rets the nuer ten. A poal nuer syem has one unue diit for each iner from zero up to, but not inng, the raix of the nuer syem. Thus in the poal deal syem, the nuers 0 to 9 can be exed usng thir reve nuls "0" to "9" in the rist "unts" poon. The nuer 12 can be exed with the nual "2" in the unts poon, and with the nual "1" in the "tens" poon, to the left of the "2" whle the nuer 312 can be exed by thee nuls: "3" in the "huds" poon, "1" in the "tens" poon, and "2" in the "unts" poon.
+
+ПОДСЧЁТ КОЛИЧЕСТВА ВХОЖДЕНИЙ КАЖДОГО ОТДЕЛЬНОГО СЛОВА
+but = 1
+Each = 1
+numbers = 1
+integer = 3
+while = 1
+three = 1
+zero = 1
+number = 6
+Thus = 1
+from = 1
+has = 1
+up = 1
+expressed = 3
+rightmost = 1
+hundreds = 1
+ten = 1
+digit = 3
+using = 1
+including = 1
+in = 10
+For = 1
+numerals = 2
+an = 1
+each = 1
+system = 5
+left = 1
+letter = 1
+unique = 1
+position = 6
+decimal = 2
+tens = 2
+A = 2
+be = 3
+positional = 2
+values = 1
+for = 1
+Digital = 1
+their = 1
+respective = 1
+units = 3
+example = 1
+represents = 3
+The = 1
+can = 3
+not = 1
+and = 3
+of = 2
+by = 1
+numeral = 2
+hexadecimal = 1
+a = 1
+one = 2
+the = 20
+radix = 1
+with = 2
+to = 4
