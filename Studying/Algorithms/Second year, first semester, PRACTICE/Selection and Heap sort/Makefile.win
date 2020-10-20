@@ -1,0 +1,29 @@
+# Project: Selection and Heap sort
+# Makefile created by Dev-C++ 5.4.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "Selection\ and\ Heap\ sort.o"
+LINKOBJ  = "Selection and Heap sort.o"
+LIBS     = -L"E:/English Program/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -pthread -g3
+INCS     = -I"E:/English Program/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"E:/English Program/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = "Selection and Heap sort.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"Selection\ and\ Heap\ sort.o": Selection\ and\ Heap\ sort.c
+	$(CC) -c "Selection and Heap sort.c" -o "Selection and Heap sort.o" $(CFLAGS)
