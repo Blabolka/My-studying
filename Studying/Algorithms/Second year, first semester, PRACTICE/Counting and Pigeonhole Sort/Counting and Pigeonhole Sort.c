@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 typedef struct queue{
 	int count;
@@ -10,23 +11,39 @@ typedef struct queue{
 
 void fill_array(int *array, int size);
 void print_array(int *array, int size);
+void counting_sort(int *array, int size);
 void pigeonhole_sort(int *array, int size);
 Queue* push(Queue *head, int number);
 
+double timeForCountingSort;
+double timeForPigeonholeSort;
+
 int main(int argc, char *argv[]){
 	
+	srand(time(0));
+	
 	int size;
+	clock_t time;
 	
 	printf("Enter the number of elements array: ");
 	scanf("%d", &size);
 	
-	int *array = (int*)malloc(sizeof(int)*size);
+	int *array1 = (int*)malloc(sizeof(int)*size);
+	int *array2 = (int*)malloc(sizeof(int)*size);
 	
-	srand(time(0));
+	fill_array(array1, size);
+	memcpy(array2, array1, sizeof(int)*size);
 	
-	fill_array(array, size);
+	time = clock();
+	counting_sort(array1, size);
+	timeForCountingSort = (double)(clock() - time);
 	
-	pigeonhole_sort(array, size);
+	time = clock();
+	pigeonhole_sort(array2, size);
+	timeForPigeonholeSort = (double)(clock() - time);
+	
+	printf("Time of Counting sort: %.0lf ms\n", timeForCountingSort);
+	printf("Time of Pigeonhole sort: %.0lf ms", timeForPigeonholeSort);
 	
 	return 0;
 }
@@ -48,6 +65,51 @@ void print_array(int *array, int size){
 		printf("%d\t", array[i]);
 	}
 	printf("\n");
+}
+
+void counting_sort(int *array, int size){
+	
+	int i;
+	
+	/*for size of counting array*/
+	int maxNumber = array[0];
+	
+	/*allocate memory to sorted array*/
+	int *sortedArray = (int*)malloc(sizeof(int)*size);
+	
+	/*counting array*/
+	int *countingArray = NULL;
+	
+	/*search max number of input array*/
+	for(i=0 ; i<size ; i++){
+		if(array[i] > maxNumber){
+			maxNumber = array[i];
+		}
+	}
+	
+	/*allocate memory for counting array*/
+	countingArray = (int*)calloc(maxNumber+1, sizeof(int));
+	
+	/*search frequency for element of input array*/
+	for(i=0 ; i<size ; i++){
+		countingArray[array[i]] += 1;
+	}
+	
+	/*modify the count array by adding the previous counts*/
+	for(i=0 ; i<maxNumber ; i++){
+		countingArray[i+1] = countingArray[i] + countingArray[i+1];
+	}
+	
+	/*fill sortedArray, do the counting sort*/
+	for(i=size-1 ; i>=0 ; i--){
+		sortedArray[countingArray[array[i]] - 1] = array[i];
+		countingArray[array[i]]--;
+	}
+	
+	/*fill array from sortedArray*/
+	for(i=0 ; i<size ; i++){
+		array[i] = sortedArray[i];
+	}
 }
 
 void pigeonhole_sort(int *array, int size){
