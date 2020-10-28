@@ -13,7 +13,7 @@ public class FloydsTriangle {
 
     private void fillArray(){
 
-        numbersForFloydsTriangle = new ArrayList<Integer>(numberOfRows);
+        numbersForFloydsTriangle = new ArrayList<>(numberOfRows);
 
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = getNumberInColumnByRow(i); j < getNumberInDiagonalByRow(i+1)+1; j++) {

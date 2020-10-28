@@ -3,30 +3,33 @@
 
 int** init_array(int size, int **array);
 void visited_to_false(int size, char *visited);
-void set_connections_for_matrix(int size, int **matrix);
+void set_connections_for_matrix(int sizeX, int sizeY, int **matrix);
 void print_matrix(int size, int **matrix);
-void count_all_knight_moves(int **matrix, char *visited, int size);
+void count_all_knight_moves(int **matrix, char *visited, int sizeX, int sizeY);
 void search_moves(int **matrix, char *visited, int start, int size);
 int isVisited(char *visited, int size);
-
 
 long long int counter = 0;
 
 int main() {
 	
-	int N;
-	printf("Enter the size of chest desk: ");
-	scanf("%d", &N);
+	int sizeX, sizeY;
+	printf("Enter width of chest desk: ");
+	scanf("%d", &sizeX);
+	printf("Enter height of chest desk: ");
+	scanf("%d", &sizeY);
 	
 	int **matrix = NULL;
-	matrix = init_array(N*N, matrix);
+	matrix = init_array(sizeX*sizeY, matrix);
+		
+	char *visited = (char*)malloc(sizeof(char)*(sizeX*sizeY));
+	visited_to_false(sizeX*sizeY, visited);
+
+	set_connections_for_matrix(sizeX, sizeY, matrix);
 	
-	char *visited = (char*)malloc(sizeof(char)*(N*N));
-	visited_to_false(N*N, visited);
+	//print_matrix(sizeX*sizeY, matrix);
 	
-	set_connections_for_matrix(N, matrix);
-	
-	count_all_knight_moves(matrix, visited, N*N);
+	count_all_knight_moves(matrix, visited, sizeX, sizeY);
 	
 	printf("Counter = %ld\n", counter);
 	
@@ -54,35 +57,35 @@ void visited_to_false(int size, char *visited){
 	}
 }
 
-void set_connections_for_matrix(int size, int **matrix){
+void set_connections_for_matrix(int sizeX, int sizeY, int **matrix){
 	
 	int i,j;
 	
-	for(i=0 ; i<size ; i++){
-		for(j=0 ; j<size ; j++){
+	for(i=0 ; i<sizeY ; i++){
+		for(j=0 ; j<sizeX ; j++){
 			if(i-1 >= 0 && j-2 >= 0){
-				matrix[i*size + j][(i-1)*size + (j-2)] = 1;
+				matrix[i*sizeX + j][(i-1)*sizeY + (j-2)] = 1;
 			}
 			if(i-2 >= 0 && j-1 >= 0){
-				matrix[i*size + j][(i-2)*size + (j-1)] = 1;
+				matrix[i*sizeX + j][(i-2)*sizeY + (j-1)] = 1;
 			}
-			if(i-2 >= 0 && j+1 < size){
-				matrix[i*size + j][(i-2)*size + (j+1)] = 1;
+			if(i-2 >= 0 && j+1 < sizeX){
+				matrix[i*sizeX + j][(i-2)*sizeY + (j+1)] = 1;
 			}
-			if(i-1 >= 0 && j+2 < size){
-				matrix[i*size + j][(i-1)*size + (j+2)] = 1;
+			if(i-1 >= 0 && j+2 < sizeX){
+				matrix[i*sizeX + j][(i-1)*sizeY + (j+2)] = 1;
 			}
-			if(i+1 < size && j+2 < size){
-				matrix[i*size + j][(i+1)*size + (j+2)] = 1;
+			if(i+1 < sizeY && j+2 < sizeX){
+				matrix[i*sizeX + j][(i+1)*sizeY + (j+2)] = 1;
 			}
-			if(i+2 < size && j+1 < size){
-				matrix[i*size + j][(i+2)*size + (j+1)] = 1;
+			if(i+2 < sizeY && j+1 < sizeX){
+				matrix[i*sizeX + j][(i+2)*sizeY + (j+1)] = 1;
 			}
-			if(i+2 < size && j-1 >= 0){
-				matrix[i*size + j][(i+2)*size + (j-1)] = 1;
+			if(i+2 < sizeY && j-1 >= 0){
+				matrix[i*sizeX + j][(i+2)*sizeY + (j-1)] = 1;
 			}
-			if(i+1 < size && j-2 >= 0){
-				matrix[i*size + j][(i+1)*size + (j-2)] = 1;
+			if(i+1 < sizeY && j-2 >= 0){
+				matrix[i*sizeX + j][(i+1)*sizeY + (j-2)] = 1;
 			}
 		}
 	}
@@ -100,11 +103,11 @@ void print_matrix(int size, int **matrix){
 	}
 }
 
-void count_all_knight_moves(int **matrix, char *visited, int size){
+void count_all_knight_moves(int **matrix, char *visited, int sizeX, int sizeY){
 	
 	int i;
-	for(i=0 ; i<size ; i++){
-		search_moves(matrix, visited, i, size);
+	for(i=0 ; i<(sizeX*sizeY) ; i++){
+		search_moves(matrix, visited, i, sizeX*sizeY);
 	}
 }
 
