@@ -3,12 +3,17 @@ import java.util.List;
 
 public class FloydsTriangle {
 
-    private final int numberOfRows;
+    private int numberOfRows;
     private List<Integer> numbersForFloydsTriangle;
 
     public FloydsTriangle(int numberOfRows){
-        this.numberOfRows = numberOfRows;
-        fillArray();
+        try{
+            this.numberOfRows = numberOfRows;
+            fillArray();
+        }catch (Exception ex){
+            System.out.println(ex.toString());
+        }
+
     }
 
     private void fillArray(){
