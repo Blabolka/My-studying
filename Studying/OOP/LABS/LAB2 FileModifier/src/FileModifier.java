@@ -6,10 +6,9 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class FileModifier {
 
@@ -18,24 +17,24 @@ public class FileModifier {
     FileReader fileReader;
     FileWriter fileWriter;
 
-    StringBuffer allTextFromFileForReading;
-    StringBuilder allTextForFileForWriting = new StringBuilder();
+    StringBuffer readText;
+    StringBuilder textToWrite = new StringBuilder();
 
     public FileModifier(String filePathToRead, String filePathToWrite){
         fileReader = new FileReader(filePathToRead);
         fileWriter = new FileWriter(filePathToWrite);
-        allTextFromFileForReading = new StringBuffer(fileReader.getAllTextFromFile());
+        readText = new StringBuffer(fileReader.getAllTextFromFile());
     }
 
     public void copyAllText(){
         addHeaderToFileForWriting("FULLY COPIED TEXT");
-        addBodyToFileForWriting(allTextFromFileForReading.toString());
+        addBodyToFileForWriting(readText.toString());
     }
 
     public void splitBySeparator(String separator){
         addHeaderToFileForWriting("SPLIT STRING BY '"+ separator +"'");
 
-        String[] splitString = StringUtils.split(allTextFromFileForReading.toString(), separator);
+        String[] splitString = StringUtils.split(readText.toString(), separator);
 
         StringBuilder splitStringBuilder = new StringBuilder();
         for (String s : splitString) {
@@ -47,7 +46,7 @@ public class FileModifier {
     public void splitIntoWords(){
         addHeaderToFileForWriting("SPLIT INTO WORDS");
 
-        String[] wordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(allTextFromFileForReading.toString());
+        String[] wordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(readText.toString());
 
         StringBuilder wordsWithoutSymbolsStringBuider = new StringBuilder();
         for (String w : wordsWithoutSymbols) {
@@ -58,12 +57,12 @@ public class FileModifier {
 
     public void countTheNumberOfWords(){
         addHeaderToFileForWriting("COUNT OF WORDS");
-        addBodyToFileForWriting(getAllWordsFromTextWithoutSymbols(allTextFromFileForReading.toString()).length + NEXT_LINE);
+        addBodyToFileForWriting(getAllWordsFromTextWithoutSymbols(readText.toString()).length + NEXT_LINE);
     }
 
     public void countTheNumberOfCharacters(){
         addHeaderToFileForWriting("COUNT OF CHARACTERS");
-        addBodyToFileForWriting(allTextFromFileForReading.toString().length() + NEXT_LINE);
+        addBodyToFileForWriting(readText.toString().length() + NEXT_LINE);
     }
 
     public void capitalizeEveryWord(){
@@ -113,7 +112,7 @@ public class FileModifier {
 
     public void changeAllDigitsToEquivalentStrings(){
         addHeaderToFileForWriting("TEXT WITH DIGITS IN EQUIVALENT STRINGS");
-        String allText = allTextFromFileForReading.toString();
+        String allText = readText.toString();
         for (int i = 0; i <= 9; i++) {
             allText = StringUtils.replace(allText, String.valueOf(i), getDigitInStringForm(i));
         }
@@ -123,7 +122,7 @@ public class FileModifier {
     public void countNumberOfOccurrencesEveryWord(){
         addHeaderToFileForWriting("NUMBER OF OCCURRENCES EVERY WORD");
         Map<String, Integer> occurrences = new HashMap<>();
-        String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(allTextFromFileForReading.toString());
+        String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(readText.toString());
         for (String s : allWordsWithoutSymbols) {
             if(!occurrences.containsKey(s)){
                 occurrences.put(s,getOccurrenceOfWord(allWordsWithoutSymbols,s));
@@ -144,14 +143,28 @@ public class FileModifier {
         addBodyToFileForWriting(Arrays.toString(words));
     }
 
+    public void formatDates(){
+        addHeaderToFileForWriting("FORMATTED DATES OF PATTERN dd.MM.yyyy");
+
+        String[] allWords = getAllWordsFromTextBySeparator("\t");
+
+        for (int i = 0 ; i<allWords.length ; i++) {
+            try{
+                LocalDate date = LocalDate.parse(allWords[i], DateTimeFormatter.ofPattern("MMMM d, yyyy", Locale.US));
+                allWords[i] = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+            }catch (Exception ignored){}
+        }
+        addBodyToFileForWriting(Arrays.toString(allWords));
+    }
+
     public void writeToFile(){
-        fileWriter.writeTextToFile(allTextForFileForWriting.toString());
+        fileWriter.writeTextToFile(textToWrite.toString());
     }
 
     private String[] getAllWordsFromTextWithoutSymbols(String text){
         StringBuilder separator = new StringBuilder();
         for (int i = 0; i < text.length() ; i++) {
-            if(!CharUtils.isAsciiAlpha(text.charAt(i)) && !CharUtils.isAsciiNumeric(allTextFromFileForReading.toString().charAt(i))){
+            if(!CharUtils.isAsciiAlpha(text.charAt(i)) && !CharUtils.isAsciiNumeric(readText.toString().charAt(i))){
                 if(!separator.toString().contains(String.valueOf(text.charAt(i)))){
                     separator.append(text.charAt(i));
                 }
@@ -161,17 +174,11 @@ public class FileModifier {
     }
 
     private String[] getAllWordsFromTextWithoutWhitespace(){
-        return StringUtils.split(allTextFromFileForReading.toString(), " \t");
+        return StringUtils.split(readText.toString(), " \t");
     }
 
-    private String getStringWithoutSymbols(String string){
-        StringBuilder newWord = new StringBuilder();
-        for (int i = 0; i < string.length(); i++) {
-            if(Character.isLetter(string.charAt(i))){
-                newWord.append(string.charAt(i));
-            }
-        }
-        return newWord.toString();
+    private String[] getAllWordsFromTextBySeparator(String separator){
+        return StringUtils.split(readText.toString(), separator);
     }
 
     private Integer getOccurrenceOfWord(String[] text, String word){
@@ -182,6 +189,16 @@ public class FileModifier {
             }
         }
         return occurrence;
+    }
+
+    private String getStringWithoutSymbols(String string){
+        StringBuilder newWord = new StringBuilder();
+        for (int i = 0; i < string.length(); i++) {
+            if(Character.isLetter(string.charAt(i))){
+                newWord.append(string.charAt(i));
+            }
+        }
+        return newWord.toString();
     }
 
     private String getDigitInStringForm(int number){
@@ -209,10 +226,10 @@ public class FileModifier {
     }
 
     private void addHeaderToFileForWriting(String header){
-        allTextForFileForWriting.append(header).append(NEXT_LINE);
+        textToWrite.append(header).append(NEXT_LINE);
     }
 
     private void addBodyToFileForWriting(String body){
-        allTextForFileForWriting.append(body).append(NEXT_LINE);
+        textToWrite.append(body).append(NEXT_LINE);
     }
 }
