@@ -21,9 +21,9 @@ public class Main {
                 floydsTriangle = new FloydsTriangle(numberOfRowsFloydsTriangle);
 
                 if(choice.equals("1")){
-                    FloydsTrianglePrinter.printDirect(floydsTriangle);
+                    floydsTriangle.printDirect();
                 }else if(choice.equals("2")) {
-                    FloydsTrianglePrinter.printConverse(floydsTriangle);
+                    floydsTriangle.printConverse();
                 }
             }else if(choice.equals("0")){
                 break;

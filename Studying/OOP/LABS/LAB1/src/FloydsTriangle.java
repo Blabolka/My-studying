@@ -5,13 +5,15 @@ public class FloydsTriangle {
 
     private int numberOfRows;
     private List<Integer> sequence;
+    private FloydsTrianglePrinter printer;
 
     public FloydsTriangle(int numberOfRows){
         this.numberOfRows = numberOfRows;
-        fillArray();
+        fillSequence();
+        printer = new FloydsTrianglePrinter(numberOfRows, sequence);
     }
 
-    private void fillArray(){
+    private void fillSequence(){
         sequence = new ArrayList<>(numberOfRows);
 
         for (int i = 0; i < numberOfRows; i++) {
@@ -29,11 +31,11 @@ public class FloydsTriangle {
         return (row*(row + 1)) / 2;
     }
 
-    public int getNumberOfRows(){
-        return numberOfRows;
+    public void printDirect(){
+        printer.printDirect();
     }
 
-    public List<Integer> getSequence(){
-        return sequence;
+    public void printConverse(){
+        printer.printConverse();
     }
 }
