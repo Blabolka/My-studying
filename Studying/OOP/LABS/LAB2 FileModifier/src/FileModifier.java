@@ -1,5 +1,13 @@
 import org.apache.commons.lang3.CharUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 public class FileModifier {
 
@@ -101,6 +109,39 @@ public class FileModifier {
         addBodyToFileForWriting(newWords.toString());
     }
 
+    public void changeAllDigitsToEquivalentStrings(){
+        addHeaderToFileForWriting("TEXT WITH DIGITS IN EQUIVALENT STRINGS");
+        String allText = allTextFromFileForReading.toString();
+        for (int i = 0; i <= 9; i++) {
+            allText = StringUtils.replace(allText, String.valueOf(i), getDigitInStringForm(i));
+        }
+        addBodyToFileForWriting(allText + NEXT_LINE);
+    }
+
+    public void countNumberOfOccurrencesEveryWord(){
+        addHeaderToFileForWriting("NUMBER OF OCCURRENCES EVERY WORD");
+        Map<String, Integer> occurrences = new HashMap<>();
+        String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(allTextFromFileForReading.toString());
+        for (String s : allWordsWithoutSymbols) {
+            if(!occurrences.containsKey(s)){
+                occurrences.put(s,getOccurrenceOfWord(allWordsWithoutSymbols,s));
+            }
+        }
+        addBodyToFileForWriting(occurrences.entrySet() + NEXT_LINE);
+    }
+
+    public void formatNumbers(){
+        addHeaderToFileForWriting("FORMATTED NUMBERS BY PATTERN #,###");
+
+        String[] words = getAllWordsFromTextWithoutWhitespace();
+        for (int i = 0; i < words.length; i++) {
+            if(NumberUtils.isDigits(words[i])){
+                words[i] = getFormattedString(Integer.parseInt(words[i]));
+            }
+        }
+        addBodyToFileForWriting(Arrays.toString(words));
+    }
+
     public void writeToFile(){
         fileWriter.writeTextToFile(allTextForFileForWriting.toString());
     }
@@ -129,6 +170,40 @@ public class FileModifier {
             }
         }
         return newWord.toString();
+    }
+
+    private Integer getOccurrenceOfWord(String[] text, String word){
+        Integer occurrence = 0;
+        for (String s: text) {
+            if(word.equals(s)){
+                occurrence++;
+            }
+        }
+        return occurrence;
+    }
+
+    private String getDigitInStringForm(int number){
+        String stringForm = "";
+        switch (number){
+            case 0: stringForm = "ZERO"; break;
+            case 1: stringForm = "ONE"; break;
+            case 2: stringForm = "TWO"; break;
+            case 3: stringForm = "THREE"; break;
+            case 4: stringForm = "FOUR"; break;
+            case 5: stringForm = "FIVE"; break;
+            case 6: stringForm = "SIX"; break;
+            case 7: stringForm = "SEVEN"; break;
+            case 8: stringForm = "EIGHT"; break;
+            case 9: stringForm = "NINE"; break;
+        }
+        return stringForm;
+    }
+
+    private String getFormattedString(int number){
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+        DecimalFormat decimalFormat = (DecimalFormat)numberFormat;
+        decimalFormat.applyPattern("###,###");
+        return decimalFormat.format(number);
     }
 
     private void addHeaderToFileForWriting(String header){

@@ -9,6 +9,8 @@ public class Main {
         fileModifier1.capitalizeEveryWord();
         fileModifier1.toUpperCaseEverySecondWord();
         fileModifier1.createNewWordsFromTwoFirstAndLastLettersEveryWord();
+        fileModifier1.changeAllDigitsToEquivalentStrings();
+        fileModifier1.countNumberOfOccurrencesEveryWord();
         fileModifier1.writeToFile();
 
         FileModifier fileModifier2 = new FileModifier("Flyby missions.txt", "Modified Flyby missions.txt");
@@ -16,6 +18,7 @@ public class Main {
         fileModifier2.splitIntoWords();
         fileModifier2.countTheNumberOfWords();
         fileModifier2.countTheNumberOfCharacters();
+        fileModifier2.formatNumbers();
         fileModifier2.writeToFile();
     }
 }
