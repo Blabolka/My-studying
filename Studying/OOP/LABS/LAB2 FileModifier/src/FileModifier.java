@@ -48,11 +48,11 @@ public class FileModifier {
 
         String[] wordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(readText.toString());
 
-        StringBuilder wordsWithoutSymbolsStringBuider = new StringBuilder();
+        StringBuilder wordsWithoutSymbolsStringBuilder = new StringBuilder();
         for (String w : wordsWithoutSymbols) {
-            wordsWithoutSymbolsStringBuider.append(w).append(NEXT_LINE);
+            wordsWithoutSymbolsStringBuilder.append(w).append(NEXT_LINE);
         }
-        addBodyToFileForWriting(wordsWithoutSymbolsStringBuider.toString());
+        addBodyToFileForWriting(wordsWithoutSymbolsStringBuilder.toString());
     }
 
     public void countTheNumberOfWords(){
