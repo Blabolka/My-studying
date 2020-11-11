@@ -14,16 +14,16 @@ public class FileModifier {
 
     private static final String NEXT_LINE = System.lineSeparator();
 
-    FileReader fileReader;
-    FileWriter fileWriter;
+    private final FileReader fileReader;
+    private final FileWriter fileWriter;
 
-    StringBuffer readText;
-    StringBuilder textToWrite = new StringBuilder();
+    private final StringBuffer readText;
+    private final StringBuilder textToWrite = new StringBuilder();
 
     public FileModifier(String filePathToRead, String filePathToWrite){
         fileReader = new FileReader(filePathToRead);
         fileWriter = new FileWriter(filePathToWrite);
-        readText = new StringBuffer(fileReader.getAllTextFromFile());
+        readText = new StringBuffer(fileReader.readTextFromFile());
     }
 
     public void copyAllText(){

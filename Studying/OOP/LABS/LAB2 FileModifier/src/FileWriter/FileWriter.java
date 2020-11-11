@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FileWriter {
 
-    File fileToWrite;
+    private final File fileToWrite;
 
     public FileWriter(String filePathToWrite){
         fileToWrite = new File(filePathToWrite);

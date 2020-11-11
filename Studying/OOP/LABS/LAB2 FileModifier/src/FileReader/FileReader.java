@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FileReader {
 
-    File fileToRead;
+    private final File fileToRead;
 
     private static final String NEXT_LINE = System.lineSeparator();
 
@@ -14,7 +14,7 @@ public class FileReader {
         fileToRead = new File(filePathToRead);
     }
 
-    public String getAllTextFromFile(){
+    public String readTextFromFile(){
 
         StringBuilder allTextFromFile = new StringBuilder();
 

@@ -1,5 +1,3 @@
-import org.apache.commons.lang3.StringUtils;
-
 public class Main {
     public static void main(String[] args) {
         FileModifier fileModifier1 = new FileModifier("src\\InputFiles\\Digital values.txt", "src\\OutputFiles\\Modified Digit Values.txt");
@@ -14,8 +12,6 @@ public class Main {
         fileModifier1.changeAllDigitsToEquivalentStrings();
         fileModifier1.countNumberOfOccurrencesEveryWord();
         fileModifier1.writeToFile();
-
-        System.out.println(StringUtils.getLevenshteinDistance("Andrew 55","Andrew"));
 
         FileModifier fileModifier2 = new FileModifier("src\\InputFiles\\Flyby missions.txt", "src\\OutputFiles\\Modified Flyby missions.txt");
         fileModifier2.copyAllText();
