@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <limits.h>
 
 //functions
 void optimizeRectangleSize();
@@ -14,27 +13,36 @@ int isFreeCell(int **rectangle, int posY, int posX);
 int possibleToSetSquare(int **rectangle, int startPosY, int startPosX, int sideLenght);
 void setSquare(int **rectangle, int startPosY, int startPosX, int sideLenght);
 void printRectangle(int **rectangle);
+void saveBestMatch(int **rectangle);
 
 //variables
 int rectWidth, rectHeight;
 int currentNumberOfSquares = 0;
-int minNumberOfSquares = INT_MAX;
+int minNumberOfSquares;
+int **bestMatch;
 
 int main(int argc, char *argv[]) {
 
+	printf("Enter the height of rectangle: ");
+	scanf("%d", &rectHeight);
+	
 	printf("Enter the width of rectangle: ");
 	scanf("%d", &rectWidth);
 	
-	printf("Enter the height of rectangle: ");
-	scanf("%d", &rectHeight);
+	minNumberOfSquares = rectWidth*rectHeight;
 	
 	optimizeRectangleSize();
 	
 	int** rectangle = initTwoDimentionalArray(rectWidth, rectHeight);
+	bestMatch = initTwoDimentionalArray(rectWidth, rectHeight);
 	
 	searchMinNumberOfSquares(rectangle);
 	
-	printf("%d", minNumberOfSquares);
+	printf("\nMinimun number of squares: %d\n", minNumberOfSquares);
+	
+	printf("Squared rectangle:\n");
+	printRectangle(bestMatch);
+	
 	return 0;
 }
 
@@ -70,6 +78,7 @@ void searchMinNumberOfSquares(int **rectangle){
 	}
 	
 	if(isFilled(rectangle)){
+		saveBestMatch(rectangle);
 		minNumberOfSquares = currentNumberOfSquares;	
 		return;	
 	}
@@ -122,11 +131,7 @@ void clearCurrentNumber(int **rectangle, int number){
 }
 
 int min(int number1, int number2){
-	if(number1 < number2){
-		return number1;
-	}else{
-		return number2;
-	}
+	return number1 < number2 ? number1 : number2;
 }
 
 int isFreeCell(int **rectangle, int posY, int posX){
@@ -175,3 +180,20 @@ void printRectangle(int **rectangle){
 	}
 	printf("\n");
 }
+
+void saveBestMatch(int **rectangle){
+	
+	int i,j;
+	for(i=0 ; i<rectHeight ; i++){
+		for(j=0 ; j<rectWidth ; j++){
+			bestMatch[i][j] = rectangle[i][j];
+		}
+	}
+}
+
+
+
+
+
+
+
