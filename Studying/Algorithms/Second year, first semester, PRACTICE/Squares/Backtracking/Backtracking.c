@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <time.h>
 
 //functions
 void optimizeRectangleSize();
@@ -23,6 +24,8 @@ int **bestMatch;
 
 int main(int argc, char *argv[]) {
 
+	clock_t time;
+	
 	printf("Enter the height of rectangle: ");
 	scanf("%d", &rectHeight);
 	
@@ -31,14 +34,16 @@ int main(int argc, char *argv[]) {
 	
 	minNumberOfSquares = rectWidth*rectHeight;
 	
-	optimizeRectangleSize();
+	//optimizeRectangleSize();
 	
 	int** rectangle = initTwoDimentionalArray(rectWidth, rectHeight);
 	bestMatch = initTwoDimentionalArray(rectWidth, rectHeight);
 	
+	time = clock();
 	searchMinNumberOfSquares(rectangle);
-	
 	printf("\nMinimun number of squares: %d\n", minNumberOfSquares);
+	time = clock() - time;
+	printf("Time: %d ms\n\n", time);
 	
 	printf("Squared rectangle:\n");
 	printRectangle(bestMatch);
@@ -72,7 +77,15 @@ int** initTwoDimentionalArray(int columns, int rows){
 }
 
 void searchMinNumberOfSquares(int **rectangle){
-		
+	
+	if(rectHeight == rectWidth){
+		currentNumberOfSquares++;
+		minNumberOfSquares = currentNumberOfSquares;
+		setSquare(rectangle, 0, 0, rectWidth);
+		saveBestMatch(rectangle);
+		return;
+	}
+	
 	if(currentNumberOfSquares >= minNumberOfSquares){
 		return;
 	}
@@ -190,10 +203,3 @@ void saveBestMatch(int **rectangle){
 		}
 	}
 }
-
-
-
-
-
-
-
