@@ -1,16 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FloydsTriangle {
+public class FloydTriangle {
 
     private int numberOfRows;
     private List<Integer> sequence;
-    private FloydsTrianglePrinter printer;
 
-    public FloydsTriangle(int numberOfRows){
+    public FloydTriangle(int numberOfRows){
         this.numberOfRows = numberOfRows;
         fillSequence();
-        printer = new FloydsTrianglePrinter(numberOfRows, sequence);
     }
 
     private void fillSequence(){
@@ -31,11 +29,11 @@ public class FloydsTriangle {
         return (row*(row + 1)) / 2;
     }
 
-    public void printDirect(){
-        printer.printDirect();
+    public int getNumberOfRows(){
+        return numberOfRows;
     }
 
-    public void printConverse(){
-        printer.printConverse();
+    public List<Integer> getSequence(){
+        return new ArrayList<>(sequence);
     }
 }

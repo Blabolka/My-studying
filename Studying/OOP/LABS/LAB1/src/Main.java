@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        FloydsTriangle floydsTriangle;
+        FloydTriangle floydTriangle;
         String choice;
 
         while(true){
@@ -17,13 +17,13 @@ public class Main {
                 choice = scanner.next();
 
                 System.out.print("Enter the number of rows for floyd's triangle: ");
-                int numberOfRowsFloydsTriangle = scanner.nextInt();
-                floydsTriangle = new FloydsTriangle(numberOfRowsFloydsTriangle);
+                int numberOfRowsFloydTriangle = scanner.nextInt();
+                floydTriangle = new FloydTriangle(numberOfRowsFloydTriangle);
 
                 if(choice.equals("1")){
-                    floydsTriangle.printDirect();
+                    FloydTrianglePrinter.printDirect(floydTriangle);
                 }else if(choice.equals("2")) {
-                    floydsTriangle.printConverse();
+                    FloydTrianglePrinter.printConverse(floydTriangle);
                 }
             }else if(choice.equals("0")){
                 break;
