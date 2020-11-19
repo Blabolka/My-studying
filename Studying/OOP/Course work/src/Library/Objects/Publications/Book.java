@@ -4,8 +4,12 @@ public class Book extends Publication {
 
     private int publicationYear;
 
-    public Book(String name, int pageCount, String printLanguage, int publicationYear) {
-        super(name, pageCount, printLanguage);
+    public Book(String title, int pageCount, String languageOfPublication, int publicationYear) {
+        super(title, pageCount, languageOfPublication);
         this.publicationYear = publicationYear;
+    }
+
+    public int getPublicationYear() {
+        return publicationYear;
     }
 }

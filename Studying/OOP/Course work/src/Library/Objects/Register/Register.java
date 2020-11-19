@@ -1,4 +1,4 @@
-package Library.Objects;
+package Library.Objects.Register;
 
 import Library.Objects.Publications.Publication;
 
@@ -6,36 +6,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Register {
-    private List<Publication> list;
+
+    private List<Publication> publications;
 
     public Register(){
-        list = new ArrayList<>();
+        publications = new ArrayList<>();
     }
 
     public void addWithChecking(Publication publication){
         if(!isInLibrary(publication)){
-            list.add(publication);
+            publications.add(publication);
         }else{
             System.out.println("Такое издание уже есть в библиотеке!");
         }
     }
 
+    public int size(){
+        return publications.size();
+    }
+
+    public List<Publication> getPublicationsList(){
+        return new ArrayList<>(publications);
+    }
+
     private boolean isInLibrary(Publication publication){
-        for (Publication p: list) {
+        for (Publication p: publications) {
             if(p.getTitle().equals(publication.getTitle())){
                 return true;
             }
         }
         return false;
-    }
-
-    public int size(){
-        return list.size();
-    }
-
-    public void print(){
-        for (Publication publication: list) {
-            System.out.println("Название: " + publication.getTitle());
-        }
     }
 }

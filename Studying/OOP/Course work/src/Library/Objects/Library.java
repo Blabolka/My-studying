@@ -1,7 +1,10 @@
 package Library.Objects;
 
 import Library.Objects.Publications.Publication;
+import Library.Objects.Register.Register;
 import Library.Services.Address;
+
+import java.util.List;
 
 public class Library {
     private String name;
@@ -18,5 +21,7 @@ public class Library {
         register.addWithChecking(publication);
     }
 
-
+    public List<Publication> getPublicationList(){
+        return register.getPublicationsList();
+    }
 }
