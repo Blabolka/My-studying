@@ -7,18 +7,22 @@ import Library.Services.Address;
 import java.util.List;
 
 public class Library {
-    private String name;
-    private Address address;
-    private Register register;
+    private final String libraryName;
+    private final Address address;
+    private final Register register;
 
-    public Library(String name, String country, String city, String street, String houseNumber){
-        this.name = name;
+    public Library(String libraryName, String country, String city, String street, String houseNumber){
+        this.libraryName = libraryName;
         address = new Address(country, city, street, houseNumber);
         register = new Register();
     }
 
     public void add(Publication publication){
         register.addWithChecking(publication);
+    }
+
+    public Publication delete(String title){
+        return register.deletePublication(title);
     }
 
     public List<Publication> getPublicationList(){

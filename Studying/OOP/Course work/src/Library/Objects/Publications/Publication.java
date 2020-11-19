@@ -2,15 +2,21 @@ package Library.Objects.Publications;
 
 public abstract class Publication {
 
-    private String title;
-    private int pageCount;
-    private String languageOfPublication;
+    private final String publisher;
+    private final String title;
+    private final int pageCount;
+    private final String languageOfPublication;
     private boolean isInLibrary = true;
 
-    public Publication(String title, int pageCount, String printLanguage) {
+    public Publication(String publisher, String title, int pageCount, String printLanguage) {
+        this.publisher = publisher;
         this.title = title;
         this.pageCount = pageCount;
         this.languageOfPublication = printLanguage;
+    }
+
+    public String getPublisher(){
+        return publisher;
     }
 
     public String getTitle() {

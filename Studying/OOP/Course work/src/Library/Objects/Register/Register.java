@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Register {
 
-    private List<Publication> publications;
+    private final List<Publication> publications;
 
     public Register(){
         publications = new ArrayList<>();
@@ -17,12 +17,19 @@ public class Register {
         if(!isInLibrary(publication)){
             publications.add(publication);
         }else{
-            System.out.println("Такое издание уже есть в библиотеке!");
+            System.out.println("This publication is already in the library!");
         }
     }
 
-    public int size(){
-        return publications.size();
+    public Publication deletePublication(String title){
+        Publication publication = null;
+        for (int i = 0; i < publications.size(); i++) {
+            if(publications.get(i).getTitle().equals(title)){
+                publication = publications.remove(i);
+                break;
+            }
+        }
+        return publication;
     }
 
     public List<Publication> getPublicationsList(){

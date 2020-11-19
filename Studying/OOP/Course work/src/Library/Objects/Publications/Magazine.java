@@ -2,14 +2,20 @@ package Library.Objects.Publications;
 
 public class Magazine extends Publication {
 
-    private int articleCount;
+    private final int articleCount;
+    private String publicationDay;
 
-    public Magazine(String name, int pageCount, String languageOfPublication, int articleCount) {
-        super(name, pageCount, languageOfPublication);
+    public Magazine(String publisher, String name, int pageCount, String languageOfPublication, int articleCount, String publicationDay) {
+        super(publisher, name, pageCount, languageOfPublication);
         this.articleCount = articleCount;
+        this.publicationDay = publicationDay;
     }
 
     public int getArticleCount() {
         return articleCount;
+    }
+
+    public String getPublicationDay() {
+        return publicationDay;
     }
 }
