@@ -1,3 +1,5 @@
-http://algolist.manual.ru/maths/combinat/knight.php - опюбхкн бюпмяднптю
-https://ru.wikipedia.org/wiki/гЮДЮВЮ_Н_УНДЕ_ЙНМЪ - наыхе ябедемхъ гюдювх н унде йнмъ
+https://en.wikipedia.org/wiki/Knight%27s_tour - наыхе ябедемхъ гюдювх н унде йнмъ
 https://forany.xyz/a-16?pg=8 - ябъгэ гюдювх н унде йнмъ я ренпхеи цпютнб
+https://www.mayhematics.com/t/1b.htm - лернд щикепю
+http://academics.smcvt.edu/jellis-monaghan/combo2/Archive/Combo%20s03/special%20topics%2003/The%20Knights%20Tour.ppt - лернд щикепю опхлеп
+http://algolist.manual.ru/maths/combinat/knight.php - опюбхкн бюпмяднптю
