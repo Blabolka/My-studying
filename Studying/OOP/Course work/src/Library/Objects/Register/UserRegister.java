@@ -34,6 +34,10 @@ public class UserRegister {
         return user;
     }
 
+    public List<User> getUsersList(){
+        return new ArrayList<>(users);
+    }
+
     private boolean isInRegister(User user){
         for (User u : users) {
             if(u.getId().equals(user.getId())){

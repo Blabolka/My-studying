@@ -5,7 +5,10 @@ import Library.Objects.Persons.User;
 import Library.Objects.Publications.Book;
 import Library.Objects.Publications.Magazine;
 import Library.Objects.Publications.Publication;
+import Library.Objects.Register.PublicationRegister;
 import Library.Objects.Register.PublicationRegisterPrinter;
+import Library.Objects.Register.UserRegister;
+import Library.Services.Address;
 
 import java.util.Scanner;
 
@@ -15,7 +18,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Library library = new Library("Andrew Klochko Library", "Ukraine", "Kharkiv", "Klochkivska", "1337");
+        Address libraryAddress = new Address("Ukraine", "Kharkiv", "Klochkivska", "1337");
+        PublicationRegister publicationRegister = new PublicationRegister();
+        UserRegister userRegister = new UserRegister();
+        Library library = new Library("Andrew Klochko Library", libraryAddress, publicationRegister, userRegister);
 
         String choice;
         boolean exitStatus = false;
@@ -35,30 +41,40 @@ public class Main {
                 case "1":
                     Publication publication = addNewPublication();
                     if(publication != null){
-                        if(!library.addPublication(publication)) {
-                            System.out.println("This publication is already in the library!");
+                        if(!publicationRegister.add(publication)) {
+                            System.out.println("This publication is already in the library register!");
                         }
                     }
                     break;
                 case "2":
                     System.out.println("Enter the title of publication: ");
                     String title = scanner.nextLine();
-                    if(library.deletePublication(title) == null){
+                    if(publicationRegister.delete(title) == null){
                         System.out.println("There is no such publication in the register!");
                     }else{
                         System.out.println("Publication deleted successfully!");
                     }
                     break;
                 case "3":
-                    PublicationRegisterPrinter.printAllPublications(library.getPublicationList());
+                    PublicationRegisterPrinter.printAllPublications(publicationRegister.getPublicationsList());
                     break;
                 case "4":
-                    PublicationRegisterPrinter.printByLanguageOfPublication(library.getPublicationList());
+                    PublicationRegisterPrinter.printByLanguageOfPublication(publicationRegister.getPublicationsList());
                     break;
                 case "5":
-
+                    User user = addNewUser();
+                    if(!userRegister.add(user)) {
+                        System.out.println("This user is already in the library register!");
+                    }
                     break;
                 case "6":
+                    System.out.println("Enter the user's ID: ");
+                    String ID = scanner.nextLine();
+                    if(userRegister.delete(ID) == null){
+                        System.out.println("There is no such user in the register!");
+                    }else{
+                        System.out.println("User deleted successfully!");
+                    }
                     break;
                 case "7":
                     break;
@@ -127,5 +143,17 @@ public class Main {
 
     private static User addNewUser(){
 
+        System.out.println("Enter first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter patronymic: ");
+        String patronymic = scanner.nextLine();
+        System.out.println("Enter birth year: ");
+        String birthYear = scanner.nextLine();
+        System.out.println("Enter ID: ");
+        String id = scanner.nextLine();
+
+        return new User(firstName, lastName, patronymic, birthYear, id);
     }
 }
