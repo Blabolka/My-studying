@@ -5,26 +5,29 @@ import Library.Objects.Publications.Publication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Register {
+public class PublicationRegister {
 
     private final List<Publication> publications;
 
-    public Register(){
+    public PublicationRegister(){
         publications = new ArrayList<>();
     }
 
-    public void addWithChecking(Publication publication){
-        if(!isInLibrary(publication)){
+    public boolean add(Publication publication){
+        boolean status;
+        if(!isInRegister(publication)){
             publications.add(publication);
+            status = true;
         }else{
-            System.out.println("This publication is already in the library!");
+            status = false;
         }
+        return status;
     }
 
-    public Publication deletePublication(String title){
+    public Publication delete(String title){
         Publication publication = null;
         for (int i = 0; i < publications.size(); i++) {
-            if(publications.get(i).getTitle().equals(title)){
+            if(publications.get(i).getTitle().equals(title) && publications.get(i).isInLibrary()){
                 publication = publications.remove(i);
                 break;
             }
@@ -36,7 +39,7 @@ public class Register {
         return new ArrayList<>(publications);
     }
 
-    private boolean isInLibrary(Publication publication){
+    private boolean isInRegister(Publication publication){
         for (Publication p: publications) {
             if(p.getTitle().equals(publication.getTitle())){
                 return true;

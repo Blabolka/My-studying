@@ -1,10 +1,11 @@
 package Library;
 
 import Library.Objects.Library;
+import Library.Objects.Persons.User;
 import Library.Objects.Publications.Book;
 import Library.Objects.Publications.Magazine;
 import Library.Objects.Publications.Publication;
-import Library.Objects.Register.RegisterPrinter;
+import Library.Objects.Register.PublicationRegisterPrinter;
 
 import java.util.Scanner;
 
@@ -34,25 +35,28 @@ public class Main {
                 case "1":
                     Publication publication = addNewPublication();
                     if(publication != null){
-                        library.add(publication);
+                        if(!library.addPublication(publication)) {
+                            System.out.println("This publication is already in the library!");
+                        }
                     }
                     break;
                 case "2":
                     System.out.println("Enter the title of publication: ");
                     String title = scanner.nextLine();
-                    if(library.delete(title) == null){
+                    if(library.deletePublication(title) == null){
                         System.out.println("There is no such publication in the register!");
                     }else{
                         System.out.println("Publication deleted successfully!");
                     }
                     break;
                 case "3":
-                    RegisterPrinter.printAllPublications(library.getPublicationList());
+                    PublicationRegisterPrinter.printAllPublications(library.getPublicationList());
                     break;
                 case "4":
-                    RegisterPrinter.printByLanguageOfPublication(library.getPublicationList());
+                    PublicationRegisterPrinter.printByLanguageOfPublication(library.getPublicationList());
                     break;
                 case "5":
+
                     break;
                 case "6":
                     break;
@@ -121,5 +125,7 @@ public class Main {
         return publication;
     }
 
+    private static User addNewUser(){
 
+    }
 }

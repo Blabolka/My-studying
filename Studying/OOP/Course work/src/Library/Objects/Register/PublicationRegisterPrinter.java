@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class RegisterPrinter {
+public class PublicationRegisterPrinter {
 
     public static void printAllPublications(List<Publication> publications){
         for (Publication publication : publications) {
