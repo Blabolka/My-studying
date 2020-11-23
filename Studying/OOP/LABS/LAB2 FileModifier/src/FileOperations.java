@@ -12,12 +12,12 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class OperationWithFile {
+public class FileOperations {
 
     private final FileReader fileReader;
     private final String readText;
 
-    public OperationWithFile(String filePathToRead){
+    public FileOperations(String filePathToRead){
         fileReader = new FileReader(filePathToRead);
         readText = fileReader.readTextFromFile();
     }
@@ -85,7 +85,7 @@ public class OperationWithFile {
         return allText;
     }
 
-    public String getNumberOfOccurrencesEveryWord(){
+    public String getOccurrencesOfEveryWord(){
         Map<String, Integer> occurrences = new HashMap<>();
         String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(readText);
         for (String s : allWordsWithoutSymbols) {
@@ -117,6 +117,10 @@ public class OperationWithFile {
         return Arrays.toString(allWords);
     }
 
+    public void getConcatenatedSimilarStrings(){
+
+    }
+
     private String[] getAllWordsFromTextWithoutWhitespace(){
         return StringUtils.split(readText, " \t");
     }
@@ -144,20 +148,8 @@ public class OperationWithFile {
     }
 
     private String getDigitInStringForm(int number){
-        String stringForm = "";
-        switch (number){
-            case 0: stringForm = "ZERO"; break;
-            case 1: stringForm = "ONE"; break;
-            case 2: stringForm = "TWO"; break;
-            case 3: stringForm = "THREE"; break;
-            case 4: stringForm = "FOUR"; break;
-            case 5: stringForm = "FIVE"; break;
-            case 6: stringForm = "SIX"; break;
-            case 7: stringForm = "SEVEN"; break;
-            case 8: stringForm = "EIGHT"; break;
-            case 9: stringForm = "NINE"; break;
-        }
-        return stringForm;
+        String[] numbersInTextForm = {"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
+        return numbersInTextForm[number];
     }
 
     private Integer getOccurrenceOfWord(String[] text, String word){
