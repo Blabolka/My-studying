@@ -1,4 +1,3 @@
-import FileReader.FileReader;
 import org.apache.commons.lang3.CharUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -7,31 +6,26 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
-public class FileOperations {
+public class StringOperations {
 
-    private final FileReader fileReader;
-    private final String readText;
+    private final String text;
 
-    public FileOperations(String filePathToRead){
-        fileReader = new FileReader(filePathToRead);
-        readText = fileReader.readTextFromFile();
+    public StringOperations(String text){
+        this.text = text;
     }
 
     public String getAllText(){
-        return readText;
+        return text;
     }
 
     public String[] getTextSplitBySeparator(String separator){
-        return StringUtils.split(readText, separator);
+        return StringUtils.split(text, separator);
     }
 
     public String[] getAllWords(){
-        return getAllWordsFromTextWithoutSymbols(readText);
+        return getAllWordsFromTextWithoutSymbols(text);
     }
 
     public int getTheNumberOfWords(){
@@ -39,7 +33,7 @@ public class FileOperations {
     }
 
     public int getTheNumberOfCharacters(){
-        return readText.length();
+        return text.length();
     }
 
     public String[] getCapitalizedEveryWord(){
@@ -78,7 +72,7 @@ public class FileOperations {
     }
 
     public String getTextWhereAllDigitsChangedToEquivalentStrings(){
-        String allText = readText;
+        String allText = text;
         for (int i = 0; i <= 9; i++) {
             allText = StringUtils.replace(allText, String.valueOf(i), getDigitInStringForm(i));
         }
@@ -87,7 +81,7 @@ public class FileOperations {
 
     public String getOccurrencesOfEveryWord(){
         Map<String, Integer> occurrences = new HashMap<>();
-        String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(readText);
+        String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(text);
         for (String s : allWordsWithoutSymbols) {
             if(!occurrences.containsKey(s)){
                 occurrences.put(s,getOccurrenceOfWord(allWordsWithoutSymbols,s));
@@ -117,18 +111,41 @@ public class FileOperations {
         return Arrays.toString(allWords);
     }
 
-    public void getConcatenatedSimilarStrings(){
+    public String getConcatenatedSimilarStrings(){
+        String[] rows = getAllWordsFromTextBySeparator(System.lineSeparator());
+        List<String> titles = new ArrayList<>();
 
+        for (int i = 2; i < rows.length; i++) {
+            titles.add(StringUtils.split(rows[i], "\t")[0]);
+            titles.set(i-2, StringUtils.replace(titles.get(i-2), " ", ""));
+        }
+
+        List<String> concatenatedTitles = new ArrayList<>();
+
+        while(titles.size() > 0){
+            String string = titles.remove(0);
+            StringBuilder concatenatedBuffer = new StringBuilder(string);
+            for (int i = 0; i < titles.size(); i++) {
+                if(getStringWithoutNumbers(string).equals(getStringWithoutNumbers(titles.get(i)))){
+                    concatenatedBuffer.append("AND").append(titles.get(i));
+                    titles.remove(i);
+                    i--;
+                }
+            }
+            concatenatedTitles.add(concatenatedBuffer.toString());
+        }
+
+        return concatenatedTitles.toString();
     }
 
     private String[] getAllWordsFromTextWithoutWhitespace(){
-        return StringUtils.split(readText, " \t");
+        return StringUtils.split(text, " \t");
     }
 
     private String[] getAllWordsFromTextWithoutSymbols(String text){
         StringBuilder separator = new StringBuilder();
         for (int i = 0; i < text.length() ; i++) {
-            if(!CharUtils.isAsciiAlpha(text.charAt(i)) && !CharUtils.isAsciiNumeric(readText.toString().charAt(i))){
+            if(!CharUtils.isAsciiAlpha(text.charAt(i)) && !CharUtils.isAsciiNumeric(this.text.toString().charAt(i))){
                 if(!separator.toString().contains(String.valueOf(text.charAt(i)))){
                     separator.append(text.charAt(i));
                 }
@@ -170,6 +187,16 @@ public class FileOperations {
     }
 
     private String[] getAllWordsFromTextBySeparator(String separator){
-        return StringUtils.split(readText.toString(), separator);
+        return StringUtils.split(text.toString(), separator);
+    }
+
+    private String getStringWithoutNumbers(String string){
+        StringBuilder stringWithoutNumbers = new StringBuilder();
+        for (int i = 0; i < string.length(); i++) {
+            if(!Character.isDigit(string.charAt(i))){
+                stringWithoutNumbers.append(string.charAt(i));
+            }
+        }
+        return stringWithoutNumbers.toString();
     }
 }

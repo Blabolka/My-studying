@@ -1,18 +1,12 @@
 import FileWriter.FileWriter;
-public class FileModifier {
+public class StringModifier {
 
     private static final String NEXT_LINE = System.lineSeparator();
-
-    private final FileWriter fileWriter;
 
     private int indexOfModification = 0;
 
     private final StringBuilder header = new StringBuilder();
     private final StringBuilder body = new StringBuilder();
-
-    public FileModifier(String filePathToWrite){
-        fileWriter = new FileWriter(filePathToWrite);
-    }
 
     public void addModification(String description, String modification){
         indexOfModification++;
@@ -28,7 +22,15 @@ public class FileModifier {
         this.body.append(body).append(NEXT_LINE);
     }
 
-    public void writeToFile(){
-        fileWriter.writeTextToFile(header.toString() +NEXT_LINE+ body.toString());
+    public String getHeader(){
+        return header.toString();
+    }
+
+    public String getBody(){
+        return body.toString();
+    }
+
+    public String getFormattedHeaderAndBody(){
+        return header.toString() +NEXT_LINE+ body.toString();
     }
 }

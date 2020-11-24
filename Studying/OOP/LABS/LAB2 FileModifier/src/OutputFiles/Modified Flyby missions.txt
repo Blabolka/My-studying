@@ -4,6 +4,7 @@
 4. NUMBER OF CHARACTERS
 5. FORMATTED NUMBERS BY PATTERN #,###
 6. FORMATTED DATES OF PATTERN dd.MM.yyyy
+7. CONCATENATED SIMILAR STRINGS
 
 1. Flyby missions
 Spacecraft		Closest approach	Distance
@@ -41,3 +42,4 @@ Ulysses 2, 04.02.2004, 120000000 km
 Cassini, 30.12.2000, 10000000 km
 New Horizons, 28.02.2007, 2304535 km
 ]
+7. [Pioneer10ANDPioneer11, Voyager1ANDVoyager2, UlyssesANDUlysses2, Cassini, NewHorizons]
