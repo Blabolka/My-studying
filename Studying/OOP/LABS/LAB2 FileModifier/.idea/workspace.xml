@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37015549-e3a2-45f7-b0fe-27f958760997" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../LAB1/Klochko Andrew, LAB1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB1/Klochko Andrew, LAB1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LAB2 FileModifier/FileModifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LAB2 FileModifier/FileOperations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LAB2 FileModifier/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LAB2 FileModifier/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringModifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputFiles/Modified Flyby missions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputFiles/Modified Flyby missions.txt" afterDir="false" />
-    </list>
+    <list default="true" id="37015549-e3a2-45f7-b0fe-27f958760997" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
+            <state relative-caret-position="714">
               <caret line="37" column="123" selection-start-line="37" selection-start-column="123" selection-end-line="37" selection-end-column="123" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -60,11 +50,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StringOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
+            <state relative-caret-position="967">
               <caret line="129" column="75" selection-start-line="129" selection-start-column="75" selection-end-line="129" selection-end-column="75" />
               <folding>
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
                 <element signature="method#getAllWordsFromTextWithoutSymbols#0;class#StringOperations#0" />
                 <element signature="method#getStringWithoutSymbols#0;class#StringOperations#0" />
                 <element signature="method#getDigitInStringForm#0;class#StringOperations#0" />
@@ -89,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OutputFiles/Modified Flyby missions.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+            <state relative-caret-position="840">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -158,8 +146,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -171,7 +159,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LAB3 FloydTriangleWithFile" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -231,9 +219,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -381,7 +368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
+        <state relative-caret-position="714">
           <caret line="37" column="123" selection-start-line="37" selection-start-column="123" selection-end-line="37" selection-end-column="123" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -398,18 +385,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OutputFiles/Modified Flyby missions.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        <state relative-caret-position="840">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StringOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
+        <state relative-caret-position="967">
           <caret line="129" column="75" selection-start-line="129" selection-start-column="75" selection-end-line="129" selection-end-column="75" />
           <folding>
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
             <element signature="method#getAllWordsFromTextWithoutSymbols#0;class#StringOperations#0" />
             <element signature="method#getStringWithoutSymbols#0;class#StringOperations#0" />
             <element signature="method#getDigitInStringForm#0;class#StringOperations#0" />
