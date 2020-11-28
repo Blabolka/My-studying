@@ -19,6 +19,7 @@ public class PublicationRegisterPrinter {
                 System.out.println("Publication year: " +((Book) publication).getPublicationYear());
             }else if(publication instanceof Magazine){
                 System.out.println("Article count: " +((Magazine) publication).getArticleCount());
+                System.out.println("Publication day: " +((Magazine) publication).getPublicationDay());
             }
             System.out.println();
         }

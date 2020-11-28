@@ -20,8 +20,7 @@ public class Main {
 
         Address libraryAddress = new Address("Ukraine", "Kharkiv", "Klochkivska", "1337");
         PublicationRegister publicationRegister = new PublicationRegister();
-        UserRegister userRegister = new UserRegister();
-        Library library = new Library("Andrew Klochko Library", libraryAddress, publicationRegister, userRegister);
+        Library library = new Library("Andrew Klochko Library", libraryAddress, publicationRegister);
 
         String choice;
         boolean exitStatus = false;
@@ -30,11 +29,9 @@ public class Main {
                                 "2. Delete publication from register\n" +
                                 "3. Get a list of all publications\n" +
                                 "4. Get a list of all publications sorted by print language\n" +
-                                "5. Add new user\n" +
-                                "6. Delete user\n" +
-                                "7. Give publication to user\n" +
-                                "8. Save register to storage\n" +
-                                "9. Load register from storage\n" +
+                                "5. Give publication to user\n" +
+                                "6. Save register to storage\n" +
+                                "7. Load register from storage\n" +
                                 "0. Exit");
             choice = scanner.nextLine();
             switch (choice){
@@ -62,19 +59,8 @@ public class Main {
                     PublicationRegisterPrinter.printByLanguageOfPublication(publicationRegister.getPublicationsList());
                     break;
                 case "5":
-                    User user = addNewUser();
-                    if(!userRegister.add(user)) {
-                        System.out.println("This user is already in the library register!");
-                    }
                     break;
                 case "6":
-                    System.out.println("Enter the user's ID: ");
-                    String ID = scanner.nextLine();
-                    if(userRegister.delete(ID) == null){
-                        System.out.println("There is no such user in the register!");
-                    }else{
-                        System.out.println("User deleted successfully!");
-                    }
                     break;
                 case "7":
                     break;
@@ -139,21 +125,5 @@ public class Main {
         }
 
         return publication;
-    }
-
-    private static User addNewUser(){
-
-        System.out.println("Enter first name: ");
-        String firstName = scanner.nextLine();
-        System.out.println("Enter last name: ");
-        String lastName = scanner.nextLine();
-        System.out.println("Enter patronymic: ");
-        String patronymic = scanner.nextLine();
-        System.out.println("Enter birth year: ");
-        String birthYear = scanner.nextLine();
-        System.out.println("Enter ID: ");
-        String id = scanner.nextLine();
-
-        return new User(firstName, lastName, patronymic, birthYear, id);
     }
 }
