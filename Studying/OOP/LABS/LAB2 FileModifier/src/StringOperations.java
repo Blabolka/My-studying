@@ -16,27 +16,27 @@ public class StringOperations {
         this.text = text;
     }
 
-    public String getAllText(){
+    public String copyAllText(){
         return text;
     }
 
-    public String[] getTextSplitBySeparator(String separator){
+    public String[] splitTextBySeparator(String separator){
         return StringUtils.split(text, separator);
     }
 
-    public String[] getAllWords(){
+    public String[] copyAllWords(){
         return getAllWordsFromTextWithoutSymbols(text);
     }
 
-    public int getTheNumberOfWords(){
+    public int countNumberOfWords(){
         return getAllWordsFromTextWithoutWhitespace().length;
     }
 
-    public int getTheNumberOfCharacters(){
+    public int countNumberOfCharacters(){
         return text.length();
     }
 
-    public String[] getCapitalizedEveryWord(){
+    public String[] capitalizeEveryWord(){
         String[] wordsWithoutWhitespace = getAllWordsFromTextWithoutWhitespace();
 
         for (int i=0 ; i<wordsWithoutWhitespace.length ; i++) {
@@ -45,7 +45,7 @@ public class StringOperations {
         return wordsWithoutWhitespace;
     }
 
-    public String[] getUpperCasedEverySecondWord(){
+    public String[] upperCaseEverySecondWord(){
         String[] wordsWithoutWhitespace = getAllWordsFromTextWithoutWhitespace();
 
         for (int i = 1; i <= wordsWithoutWhitespace.length; i++) {
@@ -58,7 +58,7 @@ public class StringOperations {
         return wordsWithoutWhitespace;
     }
 
-    public String[] getNewWordsFromTwoFirstAndLastLettersEveryWord(){
+    public String[] createNewWordsFromTwoFirstAndLastLettersEveryWord(){
         String[] wordsWithoutWhitespace = getAllWordsFromTextWithoutWhitespace();
 
         for (int i = 0; i < wordsWithoutWhitespace.length; i++) {
@@ -71,7 +71,7 @@ public class StringOperations {
         return wordsWithoutWhitespace;
     }
 
-    public String getTextWhereAllDigitsChangedToEquivalentStrings(){
+    public String changeAllDigitsToEquivalentStrings(){
         String allText = text;
         for (int i = 0; i <= 9; i++) {
             allText = StringUtils.replace(allText, String.valueOf(i), getDigitInStringForm(i));
@@ -79,7 +79,7 @@ public class StringOperations {
         return allText;
     }
 
-    public String getOccurrencesOfEveryWord(){
+    public String occurrencesOfEveryWord(){
         Map<String, Integer> occurrences = new HashMap<>();
         String[] allWordsWithoutSymbols = getAllWordsFromTextWithoutSymbols(text);
         for (String s : allWordsWithoutSymbols) {
@@ -90,7 +90,7 @@ public class StringOperations {
         return occurrences.entrySet().toString();
     }
 
-    public String getFormattedNumbers(){
+    public String formatNumbers(){
         String[] words = getAllWordsFromTextWithoutWhitespace();
         for (int i = 0; i < words.length; i++) {
             if(NumberUtils.isDigits(words[i])){
@@ -100,7 +100,7 @@ public class StringOperations {
         return Arrays.toString(words);
     }
 
-    public String getFormattedDates(){
+    public String formatDates(){
         String[] allWords = getAllWordsFromTextBySeparator("\t");
         for (int i = 0 ; i<allWords.length ; i++) {
             try{
@@ -111,7 +111,7 @@ public class StringOperations {
         return Arrays.toString(allWords);
     }
 
-    public String getConcatenatedSimilarStrings(){
+    public String concatenateSimilarStrings(){
         String[] rows = getAllWordsFromTextBySeparator(System.lineSeparator());
         List<String> titles = new ArrayList<>();
 
@@ -145,7 +145,7 @@ public class StringOperations {
     private String[] getAllWordsFromTextWithoutSymbols(String text){
         StringBuilder separator = new StringBuilder();
         for (int i = 0; i < text.length() ; i++) {
-            if(!CharUtils.isAsciiAlpha(text.charAt(i)) && !CharUtils.isAsciiNumeric(this.text.toString().charAt(i))){
+            if(!CharUtils.isAsciiAlpha(text.charAt(i)) && !CharUtils.isAsciiNumeric(text.charAt(i))){
                 if(!separator.toString().contains(String.valueOf(text.charAt(i)))){
                     separator.append(text.charAt(i));
                 }

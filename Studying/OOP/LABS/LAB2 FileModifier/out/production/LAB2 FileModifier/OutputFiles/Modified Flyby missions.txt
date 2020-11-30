@@ -42,4 +42,4 @@ Ulysses 2, 04.02.2004, 120000000 km
 Cassini, 30.12.2000, 10000000 km
 New Horizons, 28.02.2007, 2304535 km
 ]
-7. [Pioneer10, Pioneer11, Voyager1, Voyager2, Ulysses, Ulysses2, Cassini, NewHorizons]
+7. [Pioneer10ANDPioneer11, Voyager1ANDVoyager2, UlyssesANDUlysses2, Cassini, NewHorizons]
