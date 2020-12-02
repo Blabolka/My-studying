@@ -5,7 +5,7 @@ import Library.Objects.Publications.Publication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PublicationRegister {
+public class PublicationRegister{
 
     private final List<Publication> publications;
 
@@ -24,18 +24,11 @@ public class PublicationRegister {
         return status;
     }
 
-    public Publication delete(String title){
-        Publication publication = null;
-        for (int i = 0; i < publications.size(); i++) {
-            if(publications.get(i).getTitle().equals(title) && publications.get(i).isInLibrary()){
-                publication = publications.remove(i);
-                break;
-            }
-        }
-        return publication;
+    public Publication delete(int index){
+        return publications.remove(index);
     }
 
-    public List<Publication> getPublicationsList(){
+    public List<Publication> getList(){
         return new ArrayList<>(publications);
     }
 

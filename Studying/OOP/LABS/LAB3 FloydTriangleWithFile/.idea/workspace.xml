@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b1bcac1-4e89-4f0c-ba3f-400b37a50963" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Algorithms/Second year, first semester, PRACTICE/md5/md5.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Algorithms/Second year, first semester, PRACTICE/md5/md5.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB2 FileModifier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB2 FileModifier/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LAB3 FloydTriangleWithFile/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LAB3 FloydTriangleWithFile/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileReader/FileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileReader/FileReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileWriter/FileWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileWriter/FileWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/FileOperations/FileReader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/FileOperations/FileReader/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/FileOperations/FileWriter/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/FileOperations/FileWriter/FileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/FloydTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/FloydTriangle.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,16 +41,49 @@
     <execution />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="110" selection-start-line="9" selection-start-column="110" selection-end-line="9" selection-end-column="110" />
+            <state relative-caret-position="378">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/FileReader/FileReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objects/FloydTriangle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="method#calculateLazyCaterersSequence#0;class#FloydTriangle#0" />
+                <element signature="method#calculateTriangularNumbers#0;class#FloydTriangle#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/FileWriter/FileWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,6 +108,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/Objects/FileOperations/ReadTextOperations.java" />
         <option value="$PROJECT_DIR$/src/Objects/Files/InputFiles/input.txt" />
+        <option value="$PROJECT_DIR$/src/Objects/FileOperations/FileReader/FileReader.java" />
+        <option value="$PROJECT_DIR$/src/Objects/FileOperations/FileWriter/FileWriter.java" />
+        <option value="$PROJECT_DIR$/src/Objects/FileOperations/WritableFormatBuilder.java" />
+        <option value="$PROJECT_DIR$/src/Objects/FloydTriangle.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -83,7 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,13 +150,14 @@
               <item name="LAB3 FloydTriangleWithFile" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Files" type="462c0819:PsiDirectoryNode" />
+              <item name="FileOperations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -125,7 +169,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LAB2 FileModifier" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Course work" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -194,7 +238,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -298,29 +342,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/ReadTextOperations.java">
+    <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/WritableFormatBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/FileReader/FileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <element signature="method#getNumberOfLinesInFloydTriangle#0;class#ReadTextOperations#0" />
-            <element signature="method#getOrderOfPrintFloydTriangle#0;class#ReadTextOperations#0" />
-            <element signature="method#numberFromWord#0;class#ReadTextOperations#0" />
-          </folding>
+        <state relative-caret-position="588">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/FloydTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="273">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="method#calculateLazyCaterersSequence#0;class#FloydTriangle#0" />
+            <element signature="method#calculateTriangularNumbers#0;class#FloydTriangle#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/FileWriter/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/FileOperations/ReadTextOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="110" selection-start-line="9" selection-start-column="110" selection-end-line="9" selection-end-column="110" />
+        <state relative-caret-position="378">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

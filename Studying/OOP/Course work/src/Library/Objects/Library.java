@@ -5,6 +5,8 @@ import Library.Services.Address;
 
 public class Library {
 
+    private static final String NEXT_LINE = System.lineSeparator();
+
     private final String libraryName;
     private final Address address;
     private final PublicationRegister publicationRegister;
@@ -21,5 +23,10 @@ public class Library {
 
     public Address getAddress(){
         return address;
+    }
+
+    public String printDescription(){
+        return  address.getDescription() +
+                "Library name: " +getLibraryName() + NEXT_LINE;
     }
 }

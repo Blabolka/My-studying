@@ -1,6 +1,9 @@
 package Library.Services;
 
 public class Address {
+
+    private static final String NEXT_LINE = System.lineSeparator();
+
     private String country;
     private String city;
     private String street;
@@ -27,5 +30,12 @@ public class Address {
 
     public String getHouseNumber() {
         return houseNumber;
+    }
+
+    public String getDescription(){
+        return  "Country: " +getCountry() + NEXT_LINE +
+                "City: " +getCity() + NEXT_LINE +
+                "Street: " +getStreet() + NEXT_LINE +
+                "House number: " +getHouseNumber() + NEXT_LINE;
     }
 }

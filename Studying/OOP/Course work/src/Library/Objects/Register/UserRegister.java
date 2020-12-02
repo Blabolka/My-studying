@@ -24,17 +24,11 @@ public class UserRegister {
         return status;
     }
 
-    public User delete(String id){
-        User user = null;
-        for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).getId().equals(id)){
-                user = users.remove(i);
-            }
-        }
-        return user;
+    public User delete(int index){
+        return users.remove(index);
     }
 
-    public List<User> getUsersList(){
+    public List<User> getList(){
         return new ArrayList<>(users);
     }
 

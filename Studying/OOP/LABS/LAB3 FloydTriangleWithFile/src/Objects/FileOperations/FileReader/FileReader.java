@@ -10,8 +10,8 @@ public class FileReader {
 
     private static final String NEXT_LINE = System.lineSeparator();
 
-    public FileReader(String filePathToRead){
-        fileToRead = new File(filePathToRead);
+    public FileReader(File fileToRead){
+        this.fileToRead = fileToRead;
     }
 
     public String readText(){

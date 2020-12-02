@@ -2,6 +2,8 @@ package Library.Objects.Publications;
 
 public abstract class Publication {
 
+    private static final String NEXT_LINE = System.lineSeparator();
+
     private final String publisher;
     private final String title;
     private final int pageCount;
@@ -33,5 +35,12 @@ public abstract class Publication {
 
     public boolean isInLibrary() {
         return isInLibrary;
+    }
+
+    public String getDescription(){
+        return  "Publisher: " +getPublisher() + NEXT_LINE +
+                "Title: " +getTitle() + NEXT_LINE +
+                "Page count: " +getPageCount() + NEXT_LINE +
+                "Language of publication: " +getLanguageOfPublication() + NEXT_LINE;
     }
 }

@@ -6,15 +6,31 @@ import java.util.List;
 public class FloydTriangle {
 
     private int numberOfRows;
-    private List<Integer> lazyCaterersSequence;
-    private List<Integer> triangularNumbers;
     private List<Integer> sequence;
 
     public FloydTriangle(int numberOfRows){
         this.numberOfRows = numberOfRows;
-        lazyCaterersSequence = calculateLazyCaterersSequence();
-        triangularNumbers = calculateTriangularNumbers();
         sequence = calculateSequence();
+    }
+
+    public int getNumberOfRows(){
+        return numberOfRows;
+    }
+
+    public List<Integer> getSequence(){
+        return sequence;
+    }
+
+    private List<Integer> calculateSequence(){
+        List<Integer> lazyCaterersSequence = calculateLazyCaterersSequence();
+        List<Integer> triangularNumbers = calculateTriangularNumbers();
+        List<Integer> sequence = new ArrayList<>();
+        for (int i = 0; i < numberOfRows; i++) {
+            for (int j = lazyCaterersSequence.get(i); j <= triangularNumbers.get(i); j++) {
+                sequence.add(j);
+            }
+        }
+        return sequence;
     }
 
     private List<Integer> calculateLazyCaterersSequence(){
@@ -31,16 +47,6 @@ public class FloydTriangle {
             triangularNumbers.add(getTriangularNumber(i));
         }
         return triangularNumbers;
-    }
-
-    private List<Integer> calculateSequence(){
-        List<Integer> sequence = new ArrayList<>();
-        for (int i = 0; i < numberOfRows; i++) {
-            for (int j = lazyCaterersSequence.get(i); j <= triangularNumbers.get(i); j++) {
-                sequence.add(j);
-            }
-        }
-        return sequence;
     }
 
     private int getCentralPolygonalNumber(int row){
