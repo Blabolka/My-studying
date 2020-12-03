@@ -3,14 +3,20 @@
 #include <string.h>
 #include <time.h>
 
-void signs1(int number);
+#define LEN 17
 
-void signs2(int number);
-void signs2recursion(int number, char* t, int currentCountOfSymbols);
+void signs1();
+
+void signs2();
+void signs2recursion(char t[LEN], int currentCountOfSymbols);
+
+void signs3();
+void signs3recursion(int s, int r, char op, int currentNumber, char t[LEN]);
+
+int number;
 
 int main(int argc, char **argv){
 	
-	int number;
 	clock_t time;
 	
 	printf("Enter the number: ");
@@ -18,17 +24,25 @@ int main(int argc, char **argv){
 	
 	printf("signs1\n");
 	time = clock();
-	signs1(number);
-	printf("Time for signs1: %d ms\n\n", clock()-time);
+	signs1();
+	time = clock()-time;
+	printf("Time for signs1: %d ms\n\n", time);
 	
 	printf("signs2\n");
 	time = clock();
-	signs2(number);
-	printf("Time for signs2: %d ms\n\n", clock()-time);
+	signs2();
+	time = clock()-time;
+	printf("Time for signs2: %d ms\n\n", time);
+	
+	printf("signs3\n");
+	time = clock();
+	signs3();
+	time = clock()-time;
+	printf("Time for signs3: %d ms\n\n", time);
 	return 0;
 }
 
-void signs1(int number){
+void signs1(){
 	
 	int i,j;
 	int kod;
@@ -37,8 +51,8 @@ void signs1(int number){
 	int r;
 	char op;
 	
-	char* t = (char*)calloc(20, 1);
-	char* asciiSymbol = (char*)calloc(2,1);
+	char t[LEN];
+	char asciiSymbol[2];
 	
 	for(i=0 ; i<=6560 ; i++){
 		kod = i;
@@ -88,33 +102,47 @@ void signs1(int number){
 	}
 }
 
-void signs2(int number){
-	char* t = (char*)calloc(17, 1);
+void signs2(){
+	char t[LEN];
 	strcpy(t, "1");
 	
-	signs2recursion(number, t, 2);
+	signs2recursion(t, 2);
 }
 
-void signs2recursion(int number, char* t, int currentCountOfSymbols){
+void signs2recursion(char t[LEN], int currentCountOfSymbols){
 	
 	int i;
 		
 	if(currentCountOfSymbols <= 9){
 		
-		char* tnew = (char*)calloc(17,1);
+		char tnew[LEN];
+		char asciiSymbol[2];
 		for(i=1 ; i<=3 ; i++){
 			
-			/*DORABOTAT*/
+			memcpy(tnew, t, LEN);
 			switch(i){
 				case 1:
+					strcat(tnew, "+");
+					
+					asciiSymbol[0] = 48+currentCountOfSymbols;
+					asciiSymbol[1] = '\0';
+					strcat(tnew, asciiSymbol);
 					break;
 				case 2:
+					strcat(tnew, "-");
+					
+					asciiSymbol[0] = 48+currentCountOfSymbols;
+					asciiSymbol[1] = '\0';
+					strcat(tnew, asciiSymbol);
 					break;	
 				default:
+					asciiSymbol[0] = 48+currentCountOfSymbols;
+					asciiSymbol[1] = '\0';
+					strcat(tnew, asciiSymbol);
 					break;
 			}
+			signs2recursion(tnew, currentCountOfSymbols+1);
 		}
-		signs2recursion(number, tnew, currentCountOfSymbols);
 	}else{
 		strcat(t, ".");
 		int s = 1;
@@ -137,6 +165,53 @@ void signs2recursion(int number, char* t, int currentCountOfSymbols){
 		}
 		
 		if(r == number){
+			printf("%s\n", t);
+		}
+	}
+}
+
+void signs3(){
+	char t[LEN];
+	strcpy(t, "1");
+
+	signs3recursion(1, 0, '+', 2, t);
+}
+
+void signs3recursion(int s, int r, char op, int currentNumber, char t[LEN]){
+	
+	int newr;
+	
+	if(op == '+'){
+		newr = r+s;
+	}else{
+		newr = r-s;
+	}
+	
+	if(currentNumber <= 9){
+		char tnew[LEN];
+		char asciiSymbol[2];
+		
+		memcpy(tnew, t, LEN);
+		strcat(tnew, "+");
+		asciiSymbol[0] = 48+currentNumber;
+		asciiSymbol[1] = '\0';
+		strcat(tnew, asciiSymbol);
+		signs3recursion(currentNumber, newr, '+', currentNumber+1, tnew);
+		
+		memcpy(tnew, t, LEN);
+		strcat(tnew, "-");		
+		asciiSymbol[0] = 48+currentNumber;
+		asciiSymbol[1] = '\0';
+		strcat(tnew, asciiSymbol);
+		signs3recursion(currentNumber, newr, '-', currentNumber+1, tnew);
+		
+		memcpy(tnew, t, LEN);	
+		asciiSymbol[0] = 48+currentNumber;
+		asciiSymbol[1] = '\0';
+		strcat(tnew, asciiSymbol);
+		signs3recursion(s*10+currentNumber, r, op, currentNumber+1, tnew);
+	}else{
+		if(newr == number){
 			printf("%s\n", t);
 		}
 	}
