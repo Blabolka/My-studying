@@ -8,21 +8,21 @@ public class FloydTrianglePrinter {
         this.floydTriangle = floydTriangle;
     }
 
-    public void direct(){
+    public void normal(){
         for (int i = 0; i < floydTriangle.getNumberOfRows(); i++) {
             printLineDirect(i);
             System.out.println();
         }
     }
 
-    public void inverse(){
+    public void inverted(){
         for (int i = floydTriangle.getNumberOfRows()-1; i >= 0; i--) {
             printLineInverse(i);
             System.out.println();
         }
     }
 
-    public void shuffle(){
+    public void shuffled(){
         for (int i = 0; i < floydTriangle.getNumberOfRows(); i++) {
             if (i % 2 == 0) {
                 printLineDirect(i);

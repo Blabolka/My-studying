@@ -12,7 +12,7 @@ public class FloydTriangleStringFormer {
         this.floydTriangle = floydTriangle;
     }
 
-    public String direct(){
+    public String normal(){
         StringBuilder triangleString = new StringBuilder();
         for (int i = 0; i < floydTriangle.getNumberOfRows(); i++) {
             triangleString.append(createLineDirect(i)).append(NEXT_LINE);
@@ -20,7 +20,7 @@ public class FloydTriangleStringFormer {
         return triangleString.toString();
     }
 
-    public String inverse(){
+    public String inverted(){
         StringBuilder triangleString = new StringBuilder();
         for (int i = floydTriangle.getNumberOfRows()-1; i >= 0; i--) {
             triangleString.append(createLineInverse(i)).append(NEXT_LINE);
@@ -28,7 +28,7 @@ public class FloydTriangleStringFormer {
         return triangleString.toString();
     }
 
-    public String shuffle(){
+    public String shuffled(){
         StringBuilder triangleString = new StringBuilder();
         for (int i = 0; i < floydTriangle.getNumberOfRows(); i++) {
             if(i%2 == 0){

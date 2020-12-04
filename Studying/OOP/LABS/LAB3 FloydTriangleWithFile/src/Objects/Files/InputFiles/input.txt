@@ -1,2 +1,2 @@
 Number of lines in the Floyd's triangle equals: five lines.
-Triangle's order is normal.
+Triangle's order is shuffled.

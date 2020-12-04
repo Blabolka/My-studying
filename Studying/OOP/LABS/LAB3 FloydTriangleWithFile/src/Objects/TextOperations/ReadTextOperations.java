@@ -35,6 +35,6 @@ public class ReadTextOperations {
                 return i;
             }
         }
-        return -1;
+        return null;
     }
 }

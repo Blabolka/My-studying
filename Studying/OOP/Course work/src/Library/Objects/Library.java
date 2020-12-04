@@ -25,7 +25,7 @@ public class Library {
         return address;
     }
 
-    public String printDescription(){
+    public String getDescription(){
         return  address.getDescription() +
                 "Library name: " +getLibraryName() + NEXT_LINE;
     }

@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="310459da-4570-4a52-aec9-94453a7b947a" name="Default Changelist" comment="Updated Library course task">
+      <change beforePath="$PROJECT_DIR$/../../Algorithms/Course work/Клочко Андрей, КС21, Задача о ходе коня.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algorithms/Course work/Клочко Андрей, КС21, Задача о ходе коня.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Library.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Persons/Author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Persons/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Persons/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Persons/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Publications/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Publications/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Publications/Magazine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Publications/Magazine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Publications/Publication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Publications/Publication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Register/PublicationRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Register/PublicationRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Register/PublicationRegisterPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Register/PublicationRegisterPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Objects/Register/UserRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Objects/Register/UserRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library/Library/Services/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library/Library/Services/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library/Objects/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Persons/Author.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Persons/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Persons/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Persons/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Publications/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Publications/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Publications/Magazine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Publications/Magazine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Publications/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Publications/Publication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegisterPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegisterPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Objects/Register/UserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Objects/Register/UserRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Services/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Services/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB2 FileModifier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB2 FileModifier/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/out/production/LAB3 FloydTriangleWithFile/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/out/production/LAB3 FloydTriangleWithFile/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileReader/FileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileReader/FileReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileWriter/FileWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/out/production/LAB3 FloydTriangleWithFile/Objects/FileOperations/FileWriter/FileWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Objects/FileOperations/FileReader/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Objects/FileOperations/FileReader/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Objects/FileOperations/FileWriter/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Objects/FileOperations/FileWriter/FileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Objects/FloydTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile/src/Objects/FloydTriangle.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +20,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,7 +44,6 @@
         <option value="$PROJECT_DIR$/src/Library/Objects/Persons/Person.java" />
         <option value="$PROJECT_DIR$/src/Library/Objects/Register/Register.java" />
         <option value="$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegister.java" />
-        <option value="$PROJECT_DIR$/src/Library/Objects/Register/UserRegister.java" />
         <option value="$PROJECT_DIR$/src/Library/Objects/Persons/User.java" />
         <option value="$PROJECT_DIR$/src/Library/Objects/Publications/Publication.java" />
         <option value="$PROJECT_DIR$/src/Library/Objects/Publications/Book.java" />
@@ -86,6 +54,7 @@
         <option value="$PROJECT_DIR$/src/Library/Main.java" />
         <option value="$PROJECT_DIR$/src/Library/Services/Address.java" />
         <option value="$PROJECT_DIR$/src/Library/Objects/Library.java" />
+        <option value="$PROJECT_DIR$/src/Library/Objects/Register/UserRegister.java" />
       </list>
     </option>
   </component>
@@ -140,7 +109,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Library" type="462c0819:PsiDirectoryNode" />
               <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Persons" type="462c0819:PsiDirectoryNode" />
+              <item name="Register" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Library" type="b2602c69:ProjectViewProjectNode" />
@@ -165,7 +134,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LABS/LAB3 FloydTriangleWithFile" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -237,7 +206,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -321,24 +290,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/Register.java" />
-    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-          <folding>
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Publications/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Library/Objects/Publications/Magazine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -353,13 +304,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/RegisterPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/RegisterPrinter.java" />
     <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegisterPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -367,13 +312,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/UserRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -394,17 +332,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Library/Objects/Persons/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Publications/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/PublicationRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Register/UserRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Library/Objects/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
