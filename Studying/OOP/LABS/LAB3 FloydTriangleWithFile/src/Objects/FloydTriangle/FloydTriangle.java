@@ -1,4 +1,4 @@
-package Objects;
+package Objects.FloydTriangle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,14 @@ import java.util.List;
 public class FloydTriangle {
 
     private int numberOfRows;
+    private List<Integer> lazyCaterersSequence;
+    private List<Integer> triangularNumbers;
     private List<Integer> sequence;
 
     public FloydTriangle(int numberOfRows){
         this.numberOfRows = numberOfRows;
+        lazyCaterersSequence = calculateLazyCaterersSequence();
+        triangularNumbers = calculateTriangularNumbers();
         sequence = calculateSequence();
     }
 
@@ -17,13 +21,22 @@ public class FloydTriangle {
         return numberOfRows;
     }
 
+
+
+    public List<Integer> getLazyCaterersSequence(){
+        return new ArrayList<>(lazyCaterersSequence);
+    }
+
+    public List<Integer> getTriangularNumbers(){
+        return new ArrayList<>(triangularNumbers);
+    }
+
     public List<Integer> getSequence(){
-        return sequence;
+        return new ArrayList<>(sequence);
     }
 
     private List<Integer> calculateSequence(){
-        List<Integer> lazyCaterersSequence = calculateLazyCaterersSequence();
-        List<Integer> triangularNumbers = calculateTriangularNumbers();
+
         List<Integer> sequence = new ArrayList<>();
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = lazyCaterersSequence.get(i); j <= triangularNumbers.get(i); j++) {

@@ -1,4 +1,4 @@
-package Objects.FileOperations;
+package Objects.TextOperations;
 
 import org.apache.commons.lang3.StringUtils;
 
