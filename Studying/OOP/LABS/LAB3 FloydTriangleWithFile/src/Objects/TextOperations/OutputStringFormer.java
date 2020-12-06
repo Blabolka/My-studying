@@ -1,6 +1,6 @@
 package Objects.TextOperations;
 
-public class StringToOutputFormer {
+public class OutputStringFormer {
 
     private static final String NEXT_LINE = System.lineSeparator();
 
@@ -26,7 +26,7 @@ public class StringToOutputFormer {
         return footer.toString();
     }
 
-    public String getFormedString(){
+    public String getFormedModifications(){
         return header.toString() + body.toString() + footer.toString();
     }
 

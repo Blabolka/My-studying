@@ -1,10 +1,11 @@
 import Objects.FileOperations.FileReader.FileReader;
 import Objects.FileOperations.FileWriter.FileWriter;
-import Objects.FloydTriangle.FloydTrianglePrinter;
-import Objects.TextOperations.FloydTriangleStringFormer;
-import Objects.TextOperations.ReadTextOperations;
-import Objects.FloydTriangle.FloydTriangle;
-import Objects.TextOperations.StringToOutputFormer;
+import Objects.Shapes.FloydTriangle.TriangleTypes;
+import Objects.Shapes.Shape;
+import Objects.Shapes.ShapePrinter;
+import Objects.TextOperations.OutputStringFormer;
+import Objects.TextOperations.ReadTextInfoParser;
+import Objects.Shapes.FloydTriangle.FloydTriangle;
 
 import java.io.File;
 
@@ -14,34 +15,32 @@ public class Main {
         File fileToRead = new File("src\\Objects\\Files\\InputFiles\\input.txt");
         FileReader fileReader = new FileReader(fileToRead);
 
-        ReadTextOperations readTextInfo = new ReadTextOperations(fileReader.readText());
+        ReadTextInfoParser readTextInfo = new ReadTextInfoParser(fileReader.readText());
         Integer numberOfLines = readTextInfo.getNumberOfLinesInFloydTriangle();
         String order = readTextInfo.getOrderOfPrintFloydTriangle();
 
-
-        FloydTriangle floydTriangle = new FloydTriangle(readTextInfo.getNumberOfLinesInFloydTriangle());
-
-        FloydTrianglePrinter floydTrianglePrinter = new FloydTrianglePrinter(floydTriangle);
-        FloydTriangleStringFormer floydTriangleStringFormer = new FloydTriangleStringFormer(floydTriangle);
-
-        String triangle = null;
+        TriangleTypes type;
         if(order.equals("normal")){
-            floydTrianglePrinter.normal();
-            triangle = floydTriangleStringFormer.normal();
+            type = TriangleTypes.NORMAL;
         }else if(order.equals("inverted")){
-            floydTrianglePrinter.inverted();
-            triangle = floydTriangleStringFormer.inverted();
+            type = TriangleTypes.INVERTED;
         }else if(order.equals("shuffled")){
-            floydTrianglePrinter.shuffled();
-            triangle = floydTriangleStringFormer.shuffled();
+            type = TriangleTypes.SHUFFLED;
+        }else{
+            throw new RuntimeException();
         }
 
-        StringToOutputFormer stringToOutput = new StringToOutputFormer();
-        stringToOutput.addModification("FLOYD’S TRIANGLE CONSISTS OF " +numberOfLines+ " LINES IN " +order+ " ORDER", triangle, "POWERED BY JAVA. ENJOY OOP!");
+        Shape floydTriangle = new FloydTriangle(numberOfLines, type);
+
+        ShapePrinter shapePrinter = new ShapePrinter(floydTriangle);
+        shapePrinter.printConsole();
+
+        OutputStringFormer outputStringFormer = new OutputStringFormer();
+        outputStringFormer.addModification( "FLOYD’S TRIANGLE CONSISTS OF " +numberOfLines+ " LINES IN " +order+ " ORDER", floydTriangle.getStringRepresentation(), "POWERED BY JAVA. ENJOY OOP!");
 
         File fileToWrite = new File("src\\Objects\\Files\\OutputFiles\\output.txt");
         FileWriter fileWriter = new FileWriter(fileToWrite);
 
-        fileWriter.writeTextToFile(stringToOutput.getFormedString());
+        fileWriter.writeTextToFile(outputStringFormer.getFormedModifications());
     }
 }

@@ -2,11 +2,11 @@ package Objects.TextOperations;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class ReadTextOperations {
+public class ReadTextInfoParser {
 
     private String readText;
 
-    public ReadTextOperations(String readText){
+    public ReadTextInfoParser(String readText){
         this.readText = readText;
     }
 
@@ -25,16 +25,16 @@ public class ReadTextOperations {
     }
 
     private Integer numberFromWord(String word){
-        String[] words = {"zero", "one", "two", "three" , "four", "five", "six", "seven", "eight", "nine",
+        String[] words = {"two", "three" , "four", "five", "six", "seven", "eight", "nine",
         "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
         "nineteen", "twenty", "twentyone", "twentytwo", "twentythree", "twentyfour", "twentyfive",
         "twentysix", "twentyseven", "twentyeight", "twentynine", "thirty"};
 
         for (int i = 0; i < words.length; i++) {
             if(word.equalsIgnoreCase(words[i])){
-                return i;
+                return i+2;
             }
         }
-        return null;
+        throw new RuntimeException();
     }
 }

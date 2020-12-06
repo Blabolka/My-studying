@@ -20,15 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b1bcac1-4e89-4f0c-ba3f-400b37a50963" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Algorithms/Course work/Клочко Андрей, КС21, Задача о ходе коня.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Algorithms/Course work/Клочко Андрей, КС21, Задача о ходе коня.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Course work/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Course work/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Course work/src/Library/Objects/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Course work/src/Library/Objects/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objects/Shapes/FloydTriangle/FloydTriangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Files/InputFiles/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Files/InputFiles/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Files/OutputFiles/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Files/OutputFiles/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/FloydTriangle/FloydTrianglePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/FloydTriangle/FloydTrianglePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/TextOperations/FloydTriangleStringFormer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/TextOperations/FloydTriangleStringFormer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/TextOperations/ReadTextOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/TextOperations/ReadTextOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/FloydTriangle/FloydTriangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/FloydTriangle/FloydTrianglePrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/TextOperations/FloydTriangleStringFormer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/TextOperations/ReadTextOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/TextOperations/ReadTextInfoParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/TextOperations/StringToOutputFormer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/TextOperations/OutputStringFormer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,30 +43,15 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/ReadTextOperations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/StringToOutputFormer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+            <state relative-caret-position="424">
+              <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,21 +65,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objects/Files/OutputFiles/output.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -110,7 +86,13 @@
         <option value="$PROJECT_DIR$/src/Objects/TextOperations/FloydTriangleStringFormer.java" />
         <option value="$PROJECT_DIR$/src/Objects/TextOperations/StringToOutputFormer.java" />
         <option value="$PROJECT_DIR$/src/Objects/TextOperations/ReadTextOperations.java" />
+        <option value="$PROJECT_DIR$/src/Objects/FloydTriangle/TriangleTypes.java" />
+        <option value="$PROJECT_DIR$/src/Objects/Shape.java" />
+        <option value="$PROJECT_DIR$/src/Objects/FloydTriangle/FloydTriangle.java" />
+        <option value="$PROJECT_DIR$/src/Objects/TextOperations/ReadTextInfoExtractor.java" />
+        <option value="$PROJECT_DIR$/src/Objects/Shapes/ShapePrinter.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Objects/TextOperations/OutputStringFormer.java" />
         <option value="$PROJECT_DIR$/src/Objects/Files/InputFiles/input.txt" />
       </list>
     </option>
@@ -146,13 +128,6 @@
               <item name="LAB3 FloydTriangleWithFile" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LAB3 FloydTriangleWithFile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LAB3 FloydTriangleWithFile" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="TextOperations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -230,19 +205,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18176973" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32976446" />
@@ -250,14 +220,18 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,72 +270,112 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="290" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607107463648">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="290" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1607107463648" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607107437927">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1607107437927" />
-    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1606415269419">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606415269419" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607115470901">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607115470901" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607115470901">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607115470901" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607115470900">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607115470900" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607115470901">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607115470901" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1607108649027">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607108649027" />
+    <state x="290" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
+    <state x="290" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="473" y="154" key="FileChooserDialogImpl" />
+    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" />
+    <state x="249" y="0" key="SettingsEditor" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/FloydTriangleStringFormer.java">
+    <entry file="file://E:/Скачаные файлы/Зброд телеги/TriangleTypes.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/Скачаные файлы/Зброд телеги/ShapePrinter.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/Скачаные файлы/Зброд телеги/Shape.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/Скачаные файлы/Зброд телеги/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="252">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/FloydTriangle/FloydTrianglePrinter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/StringToOutputFormer.java">
+    <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/FloydTriangleStringFormer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        <state relative-caret-position="571">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/ReadTextOperations.java">
+    <entry file="file://$PROJECT_DIR$/src/Objects/Shapes/Shape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="42">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/ReadTextInfoParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/Shapes/FloydTriangle/FloydTriangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calculateSequence#0;class#FloydTriangle#0" />
+            <element signature="method#calculateLazyCaterersSequence#0;class#FloydTriangle#0" />
+            <element signature="method#calculateTriangularNumbers#0;class#FloydTriangle#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/Shapes/FloydTriangle/TriangleTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/TextOperations/OutputStringFormer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/Shapes/ShapePrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/Files/OutputFiles/output.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="105">
+          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -374,8 +388,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="424">
+          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
