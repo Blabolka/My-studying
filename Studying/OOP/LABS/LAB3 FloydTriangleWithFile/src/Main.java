@@ -15,9 +15,9 @@ public class Main {
         File fileToRead = new File("src\\Objects\\Files\\InputFiles\\triangleParameters.txt");
         FileReader fileReader = new FileReader(fileToRead);
 
-        ReadTextInfoParser readTextInfo = new ReadTextInfoParser(fileReader.readText());
-        Integer numberOfLines = readTextInfo.getNumberOfLinesInFloydTriangle();
-        String order = readTextInfo.getOrderOfPrintFloydTriangle();
+        ReadTextInfoParser readTextInfo = new ReadTextInfoParser(fileReader.read());
+        Integer lines = readTextInfo.numberOfLinesInFloydTriangle();
+        String order = readTextInfo.orderOfPrintFloydTriangle();
 
         TriangleTypes type;
         File fileToWrite;
@@ -34,16 +34,16 @@ public class Main {
             throw new RuntimeException();
         }
 
-        Shape floydTriangle = new FloydTriangle(numberOfLines, type);
+        Shape floydTriangle = new FloydTriangle(lines, type);
 
         ShapePrinter shapePrinter = new ShapePrinter(floydTriangle);
         shapePrinter.printConsole();
 
         OutputStringFormer outputStringFormer = new OutputStringFormer();
-        outputStringFormer.addModification( "FLOYD’S TRIANGLE CONSISTS OF " +numberOfLines+ " LINES IN " +order+ " ORDER", floydTriangle.getStringRepresentation(), "POWERED BY JAVA. ENJOY OOP!");
+        outputStringFormer.addModification( "FLOYD’S TRIANGLE CONSISTS OF " +lines+ " LINES IN " +order+ " ORDER", floydTriangle.stringRepresentation(), "POWERED BY JAVA. ENJOY OOP!");
 
         FileWriter fileWriter = new FileWriter(fileToWrite);
 
-        fileWriter.writeTextToFile(outputStringFormer.getFormedModifications());
+        fileWriter.write(outputStringFormer.getFormedModifications());
     }
 }

@@ -6,14 +6,14 @@ import java.io.IOException;
 
 public class FileWriter {
 
-    private final File fileToWrite;
+    private final File file;
 
-    public FileWriter(File fileToWrite){
-        this.fileToWrite = fileToWrite;
+    public FileWriter(File file){
+        this.file = file;
     }
 
-    public void writeTextToFile(String text){
-        try(BufferedWriter bw = new BufferedWriter(new java.io.FileWriter(fileToWrite))){
+    public void write(String text){
+        try(BufferedWriter bw = new BufferedWriter(new java.io.FileWriter(file))){
             bw.write(text);
         }catch (IOException exception){
             System.out.println("PROBLEM WITH WRITING TO FILE");

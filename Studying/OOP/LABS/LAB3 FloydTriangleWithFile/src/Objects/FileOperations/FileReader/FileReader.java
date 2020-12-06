@@ -6,19 +6,19 @@ import java.io.IOException;
 
 public class FileReader {
 
-    private final File fileToRead;
+    private final File file;
 
     private static final String NEXT_LINE = System.lineSeparator();
 
-    public FileReader(File fileToRead){
-        this.fileToRead = fileToRead;
+    public FileReader(File file){
+        this.file = file;
     }
 
-    public String readText(){
+    public String read(){
 
         StringBuilder allTextFromFile = new StringBuilder();
 
-        try(BufferedReader br = new BufferedReader(new java.io.FileReader(fileToRead))){
+        try(BufferedReader br = new BufferedReader(new java.io.FileReader(file))){
             String line;
             while((line = br.readLine()) != null){
                 allTextFromFile.append(line).append(NEXT_LINE);

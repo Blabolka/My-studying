@@ -10,21 +10,21 @@ public class ReadTextInfoParser {
         this.readText = readText;
     }
 
-    public Integer getNumberOfLinesInFloydTriangle(){
+    public Integer numberOfLinesInFloydTriangle(){
         String[] linesOfReadText = StringUtils.split(readText, System.lineSeparator());
         String[] splitLastPartOfFirstLine = StringUtils.split(linesOfReadText[0], ":");
         String numberInStringForm = StringUtils.remove(splitLastPartOfFirstLine[splitLastPartOfFirstLine.length-1], "lines.");
         numberInStringForm = StringUtils.remove(numberInStringForm, " ");
-        return numberFromWord(numberInStringForm);
+        return parseToNumber(numberInStringForm);
     }
 
-    public String getOrderOfPrintFloydTriangle(){
+    public String orderOfPrintFloydTriangle(){
         String[] linesOfReadText = StringUtils.split(readText, System.lineSeparator());
         String[] splitOrderOfPrint = StringUtils.split(linesOfReadText[1], " .");
         return splitOrderOfPrint[splitOrderOfPrint.length-1];
     }
 
-    private Integer numberFromWord(String word){
+    private Integer parseToNumber(String word){
         String[] words = {"two", "three" , "four", "five", "six", "seven", "eight", "nine",
         "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
         "nineteen", "twenty", "twentyone", "twentytwo", "twentythree", "twentyfour", "twentyfive",

@@ -9,6 +9,6 @@ public class ShapePrinter {
     }
 
     public void printConsole(){
-        System.out.println(shape.getStringRepresentation());
+        System.out.println(shape.stringRepresentation());
     }
 }

@@ -9,26 +9,26 @@ public class FloydTriangle implements Shape {
 
     private final static String NEXT_LINE = System.lineSeparator();
 
-    private int numberOfRows;
+    private Integer lines;
     private TriangleTypes type;
     private List<Integer> lazyCaterersSequence;
     private List<Integer> triangularNumbers;
     private List<Integer> sequence;
 
-    public FloydTriangle(int numberOfRows, TriangleTypes type){
-        this.numberOfRows = numberOfRows;
+    public FloydTriangle(int lines, TriangleTypes type){
+        this.lines = lines;
         this.type = type;
         lazyCaterersSequence = calculateLazyCaterersSequence();
         triangularNumbers = calculateTriangularNumbers();
         sequence = calculateSequence();
     }
 
-    public int getNumberOfRows(){
-        return numberOfRows;
+    public Integer getLines(){
+        return lines;
     }
 
     @Override
-    public String getStringRepresentation(){
+    public String stringRepresentation(){
         if(type == TriangleTypes.NORMAL){
             return normalRepresentation();
         }else if(type == TriangleTypes.INVERTED){
@@ -55,7 +55,7 @@ public class FloydTriangle implements Shape {
 
     private String normalRepresentation(){
         StringBuilder triangleString = new StringBuilder();
-        for (int i = 0; i < numberOfRows; i++) {
+        for (int i = 0; i < lines; i++) {
             triangleString.append(createNormalLine(i)).append(NEXT_LINE);
         }
         return triangleString.toString();
@@ -63,7 +63,7 @@ public class FloydTriangle implements Shape {
 
     private String invertedRepresentation(){
         StringBuilder triangleString = new StringBuilder();
-        for (int i = numberOfRows-1; i >= 0; i--) {
+        for (int i = lines -1; i >= 0; i--) {
             triangleString.append(createInvertedLine(i)).append(NEXT_LINE);
         }
         return triangleString.toString();
@@ -71,7 +71,7 @@ public class FloydTriangle implements Shape {
 
     private String shuffledRepresentation(){
         StringBuilder triangleString = new StringBuilder();
-        for (int i = 0; i < numberOfRows; i++) {
+        for (int i = 0; i < lines; i++) {
             if(i%2 == 0){
                 triangleString.append(createNormalLine(i)).append(NEXT_LINE);
             }else{
@@ -100,7 +100,7 @@ public class FloydTriangle implements Shape {
     private List<Integer> calculateSequence(){
 
         List<Integer> sequence = new ArrayList<>();
-        for (int i = 0; i < numberOfRows; i++) {
+        for (int i = 0; i < lines; i++) {
             for (int j = lazyCaterersSequence.get(i); j <= triangularNumbers.get(i); j++) {
                 sequence.add(j);
             }
@@ -110,7 +110,7 @@ public class FloydTriangle implements Shape {
 
     private List<Integer> calculateLazyCaterersSequence(){
         List<Integer> lazyCaterersSequence = new ArrayList<>();
-        for (int i = 0; i < numberOfRows; i++) {
+        for (int i = 0; i < lines; i++) {
             lazyCaterersSequence.add(getCentralPolygonalNumber(i));
         }
         return lazyCaterersSequence;
@@ -118,7 +118,7 @@ public class FloydTriangle implements Shape {
 
     private List<Integer> calculateTriangularNumbers(){
         List<Integer> triangularNumbers = new ArrayList<>();
-        for (int i = 1; i <= numberOfRows; i++) {
+        for (int i = 1; i <= lines; i++) {
             triangularNumbers.add(getTriangularNumber(i));
         }
         return triangularNumbers;
