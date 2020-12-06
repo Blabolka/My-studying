@@ -12,7 +12,7 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
 
-        File fileToRead = new File("src\\Objects\\Files\\InputFiles\\input.txt");
+        File fileToRead = new File("src\\Objects\\Files\\InputFiles\\triangleParameters.txt");
         FileReader fileReader = new FileReader(fileToRead);
 
         ReadTextInfoParser readTextInfo = new ReadTextInfoParser(fileReader.readText());
@@ -20,12 +20,16 @@ public class Main {
         String order = readTextInfo.getOrderOfPrintFloydTriangle();
 
         TriangleTypes type;
+        File fileToWrite;
         if(order.equals("normal")){
             type = TriangleTypes.NORMAL;
+            fileToWrite = new File("src\\Objects\\Files\\OutputFiles\\normalTriangle.txt");
         }else if(order.equals("inverted")){
             type = TriangleTypes.INVERTED;
+            fileToWrite = new File("src\\Objects\\Files\\OutputFiles\\invertedTriangle.txt");
         }else if(order.equals("shuffled")){
             type = TriangleTypes.SHUFFLED;
+            fileToWrite = new File("src\\Objects\\Files\\OutputFiles\\shuffledTriangle.txt");
         }else{
             throw new RuntimeException();
         }
@@ -38,7 +42,6 @@ public class Main {
         OutputStringFormer outputStringFormer = new OutputStringFormer();
         outputStringFormer.addModification( "FLOYD’S TRIANGLE CONSISTS OF " +numberOfLines+ " LINES IN " +order+ " ORDER", floydTriangle.getStringRepresentation(), "POWERED BY JAVA. ENJOY OOP!");
 
-        File fileToWrite = new File("src\\Objects\\Files\\OutputFiles\\output.txt");
         FileWriter fileWriter = new FileWriter(fileToWrite);
 
         fileWriter.writeTextToFile(outputStringFormer.getFormedModifications());
