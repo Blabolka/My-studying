@@ -14,6 +14,7 @@ int chessBoardHeight;
 int knightTourCounter = 0; //current number of passed cells
 int numberOfKnightTours = 0; //summary number of knight tours
 int maxCountOfKnightTour;
+int printable;
 const int possibleKnightMoveX[] = { -1, -1, 1, 1, -2, -2, 2, 2 };
 const int possibleknightMoveY[] = { 2, -2, 2, -2, 1, -1, 1, -1 };
 
@@ -25,10 +26,22 @@ int main(int argc, char *argv[]) {
 	printf("Enter the heigth of desk: ");
 	scanf("%d", &chessBoardHeight);
 	
-	printf("How much knight tour's you want to print?\nTo print ALL enter 'YOUR NUMBER' < 1\nEnter the number: ");
-	scanf("%d", &maxCountOfKnightTour);
 	
-	countAllKnightMoveTours();
+	printf("Do you want to print knight tour? (0 - No, 1 - Yes): ");
+	scanf("%d", &printable);
+	
+	if(printable == 1){
+		printf("How much knight tour's you want to print?\nTo print ALL enter 'YOUR NUMBER' < 1\nEnter the number: ");
+		scanf("%d", &maxCountOfKnightTour);
+		
+		countAllKnightMoveTours();
+	}else if(printable == 0){
+		maxCountOfKnightTour = 0;
+		
+		printf("Calculating...\n");
+		countAllKnightMoveTours();
+		printf("%d Tours", numberOfKnightTours);
+	}
 	
 	return 0;
 }
@@ -64,7 +77,11 @@ void countKnightMovesFromOneCell(int posInRow, int posInColumn, int **chessBoard
 	
 	if(knightTourCounter == chessBoardWidth*chessBoardHeight){
 		numberOfKnightTours++;
-		printChessBoard(chessBoard);
+		
+		if(printable == 1){
+			printChessBoard(chessBoard);
+		}
+		
 		if(maxCountOfKnightTour == numberOfKnightTours){
 			exit(0);
 		}

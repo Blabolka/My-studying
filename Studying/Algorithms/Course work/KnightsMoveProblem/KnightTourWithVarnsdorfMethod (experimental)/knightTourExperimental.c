@@ -25,7 +25,6 @@ int main(int argc, char *argv[]) {
 	scanf("%d", &width);
 	
 	int **chessBoard = initTwoDimentionalArray(height, width);
-	
 	varnsdortFromAllCells(height, width, chessBoard);
 	
 	return 0;
