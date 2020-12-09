@@ -7,8 +7,8 @@ public class Magazine extends Publication {
     private final int articleCount;
     private String publicationDay;
 
-    public Magazine(String publisher, String name, int pageCount, String languageOfPublication, int articleCount, String publicationDay) {
-        super(publisher, name, pageCount, languageOfPublication);
+    public Magazine(String id, String publisher, String name, int pageCount, String languageOfPublication, int articleCount, String publicationDay) {
+        super(id, publisher, name, pageCount, languageOfPublication);
         this.articleCount = articleCount;
         this.publicationDay = publicationDay;
     }

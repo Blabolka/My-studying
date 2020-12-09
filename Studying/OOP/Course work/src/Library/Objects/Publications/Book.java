@@ -4,10 +4,10 @@ public class Book extends Publication {
 
     private static final String NEXT_LINE = System.lineSeparator();
 
-    private int publicationYear;
+    private final int publicationYear;
 
-    public Book(String publisher, String title, int pageCount, String languageOfPublication, int publicationYear) {
-        super(publisher, title, pageCount, languageOfPublication);
+    public Book(String id, String publisher, String title, int pageCount, String languageOfPublication, int publicationYear) {
+        super(id, publisher, title, pageCount, languageOfPublication);
         this.publicationYear = publicationYear;
     }
 
