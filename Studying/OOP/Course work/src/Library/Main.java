@@ -5,7 +5,7 @@ import Library.Objects.Persons.User;
 import Library.Objects.Publications.Book;
 import Library.Objects.Publications.Magazine;
 import Library.Objects.Publications.Publication;
-import Library.Services.Address;
+import Library.Objects.Address;
 
 import java.util.Scanner;
 

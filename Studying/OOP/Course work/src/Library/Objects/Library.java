@@ -2,9 +2,9 @@ package Library.Objects;
 
 import Library.Objects.Persons.User;
 import Library.Objects.Publications.Publication;
-import Library.Services.Address;
+import Library.Objects.Register.PublicationRegister;
+import Library.Objects.Register.UserRegister;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
@@ -13,14 +13,14 @@ public class Library {
 
     private final Address address;
     private final String libraryName;
-    private final List<User> userRegister;
-    private final List<Publication> publicationRegister;
+    private final UserRegister userRegister;
+    private final PublicationRegister publicationRegister;
 
     public Library(String libraryName, Address address){
         this.address = address;
         this.libraryName = libraryName;
-        this.userRegister = new ArrayList<>();
-        this.publicationRegister = new ArrayList<>();
+        publicationRegister = new PublicationRegister();
+        userRegister = new UserRegister();
     }
 
     public String getLibraryName(){
@@ -38,35 +38,42 @@ public class Library {
 
     /*--------------------------------------------------------------*/
 
+    public boolean givePublicationToUser(String userId, String publicationId){
+        int indexOfUser = userRegister.indexOf(userId);
+        int indexOfPublication = publicationRegister.indexOf(publicationId);
+
+        if(indexOfUser == -1 || indexOfPublication == -1){
+            return false;
+        }
+
+        if(!publicationRegister.getRegister().get(indexOfPublication).isInLibrary()){
+            return false;
+        }
+
+        userRegister.getRegister().get(indexOfUser).takePublication(publicationId);
+        publicationRegister.getRegister().get(indexOfPublication).setIsInLibraryState(false);
+
+        return true;
+    }
+
+    /*--------------------------------------------------------------*/
+
     public void addPublication(Publication publication){
         publicationRegister.add(publication);
     }
 
     public boolean removePublication(String id){
-        return publicationRegister.removeIf(p -> (id.equals(p.getId()) && p.isInLibrary()));
+        return publicationRegister.remove(id);
     }
 
     public boolean checkIfPublicationExist(Publication publication){
-        for (Publication p : publicationRegister) {
-            if(publication.getId().equals(p.getId())){
-                return true;
-            }
-        }
-        return false;
+        return publicationRegister.checkIfExist(publication);
     }
 
     public List<Publication> getPublicationRegister(){
-        return new ArrayList<>(publicationRegister);
+        return publicationRegister.getRegister();
     }
 
-    private int indexOfaPublication(String publicationId){
-        for (int i = 0; i < publicationRegister.size(); i++) {
-            if(publicationRegister.get(i).getId().equals(publicationId)){
-                return i;
-            }
-        }
-        return -1;
-    }
     /*--------------------------------------------------------------*/
 
     public void addUser(User user){
@@ -74,47 +81,16 @@ public class Library {
     }
 
     public boolean removeUser(String id){
-        return userRegister.removeIf(u -> (id.equals(u.getId()) && u.getTakenPublicationsId().size() == 0));
+        return userRegister.remove(id);
     }
 
     public boolean checkIfUserExist(User user){
-        for (User u : userRegister) {
-            if(user.getId().equals(u.getId())){
-                return true;
-            }
-        }
-        return false;
+        return userRegister.checkIfExist(user);
     }
 
     public List<User> getUserRegister(){
-        return new ArrayList<>(userRegister);
+        return userRegister.getRegister();
     }
 
-    private int indexOfUser(String userId){
-        for (int i = 0; i < userRegister.size(); i++) {
-            if(userRegister.get(i).getId().equals(userId)){
-                return i;
-            }
-        }
-        return -1;
-    }
     /*--------------------------------------------------------------*/
-
-    public boolean givePublicationToUser(String userId, String publicationId){
-        int indexOfUser = indexOfUser(userId);
-        int indexOfPublication = indexOfaPublication(publicationId);
-
-        if(indexOfUser == -1 || indexOfPublication == -1){
-            return false;
-        }
-
-        if(!publicationRegister.get(indexOfPublication).isInLibrary()){
-            return false;
-        }
-
-        userRegister.get(indexOfUser).takePublication(publicationId);
-        publicationRegister.get(indexOfPublication).setIsInLibraryState(false);
-
-        return true;
-    }
 }

@@ -1,4 +1,4 @@
-package Library.Services;
+package Library.Objects;
 
 public class Address {
 
