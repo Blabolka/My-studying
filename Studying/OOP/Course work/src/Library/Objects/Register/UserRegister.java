@@ -7,22 +7,22 @@ import java.util.List;
 
 public class UserRegister implements IRegister<User> {
 
-    private final List<User> userRegister;
+    private final List<User> list;
 
     public UserRegister(){
-        userRegister = new ArrayList<>();
+        list = new ArrayList<>();
     }
 
     public void add(User user){
-        userRegister.add(user);
+        list.add(user);
     }
 
     public boolean remove(String id){
-        return userRegister.removeIf(u -> (id.equals(u.getId()) && u.getTakenPublicationsId().size() == 0));
+        return list.removeIf(u -> (id.equals(u.getId()) && u.getTakenPublicationsId().size() == 0));
     }
 
     public boolean checkIfExist(User user){
-        for (User u : userRegister) {
+        for (User u : list) {
             if(user.getId().equals(u.getId())){
                 return true;
             }
@@ -31,12 +31,12 @@ public class UserRegister implements IRegister<User> {
     }
 
     public List<User> getRegister(){
-        return new ArrayList<>(userRegister);
+        return new ArrayList<>(list);
     }
 
     public int indexOf(String userId){
-        for (int i = 0; i < userRegister.size(); i++) {
-            if(userRegister.get(i).getId().equals(userId)){
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i).getId().equals(userId)){
                 return i;
             }
         }

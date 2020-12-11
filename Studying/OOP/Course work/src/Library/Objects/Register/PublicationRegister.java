@@ -7,22 +7,22 @@ import java.util.List;
 
 public class PublicationRegister implements IRegister<Publication> {
 
-    private final List<Publication> publicationRegister;
+    private final List<Publication> list;
 
     public PublicationRegister() {
-        this.publicationRegister = new ArrayList<>();
+        this.list = new ArrayList<>();
     }
 
     public void add(Publication publication){
-        publicationRegister.add(publication);
+        list.add(publication);
     }
 
     public boolean remove(String id){
-        return publicationRegister.removeIf(p -> (id.equals(p.getId()) && p.isInLibrary()));
+        return list.removeIf(p -> (id.equals(p.getId()) && p.isInLibrary()));
     }
 
     public boolean checkIfExist(Publication publication){
-        for (Publication p : publicationRegister) {
+        for (Publication p : list) {
             if(publication.getId().equals(p.getId())){
                 return true;
             }
@@ -31,12 +31,12 @@ public class PublicationRegister implements IRegister<Publication> {
     }
 
     public List<Publication> getRegister(){
-        return new ArrayList<>(publicationRegister);
+        return new ArrayList<>(list);
     }
 
     public int indexOf(String publicationId){
-        for (int i = 0; i < publicationRegister.size(); i++) {
-            if(publicationRegister.get(i).getId().equals(publicationId)){
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i).getId().equals(publicationId)){
                 return i;
             }
         }
