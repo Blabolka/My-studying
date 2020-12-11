@@ -6,6 +6,7 @@
 //functions
 int** initTwoDimentionalArray(int columns, int rows);
 void varnsdortFromAllCells(int height, int width, int **chessBoard);
+int tourIsPossible(int width, int height, int currentPosY, int currentPosX);
 int varnsdorf(int height, int width, int **chessBoard, int currentPosY, int currentPosX);
 int countNumberOfAvailableMoves(int height, int width, int **chessBoard, int currentPosY, int currentPosX);
 void printChess(int height, int width, int **chessBoard);
@@ -50,13 +51,23 @@ void varnsdortFromAllCells(int height, int width, int **chessBoard){
 	int numberOfPassedCells;
 	for(i=0 ; i<height ; i++){
 		for(j=0 ; j<width ; j++){
-			numberOfPassedCells = varnsdorf(height, width, chessBoard, i, j);
-			printf("\n\nStarting from [%d][%d]\n", i, j);
-			printf("Number of passed cells: %d\n", numberOfPassedCells);
-			printChess(height, width, chessBoard);
-			clearChess(height, width, chessBoard);
+			if(tourIsPossible(width, height, i, j)){
+				numberOfPassedCells = varnsdorf(height, width, chessBoard, i, j);
+				printf("\n\nStarting from [%d][%d]\n", i, j);
+				printf("Number of passed cells: %d\n", numberOfPassedCells);
+				printChess(height, width, chessBoard);
+				clearChess(height, width, chessBoard);
+			}
 		}
 	}
+}
+
+int tourIsPossible(int width, int height, int currentPosY, int currentPosX){
+	if(((width * height)%2 != 0) 
+		&& ((currentPosY + currentPosX)%2 != 0)){
+		return 0;
+	}
+	return 1;
 }
 
 int varnsdorf(int height, int width, int **chessBoard, int currentPosY, int currentPosX){

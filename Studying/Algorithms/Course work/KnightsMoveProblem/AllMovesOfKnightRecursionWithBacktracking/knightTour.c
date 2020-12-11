@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <time.h>
 
 //functions
 void countAllKnightMoveTours();
+int tourIsPossible(int posInRow, int posInColumn);
 int** initTwoDimentionalArray(int columns, int rows);
 void countKnightMovesFromOneCell(int posInRow, int posInColumn, int **chessBoard);
 void printChessBoard(int **chessBoard);
@@ -18,7 +20,7 @@ int printable;
 const int possibleKnightMoveX[] = { -1, -1, 1, 1, -2, -2, 2, 2 };
 const int possibleknightMoveY[] = { 2, -2, 2, -2, 1, -1, 1, -1 };
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {	
 		
 	printf("Enter the width of desk: ");
 	scanf("%d", &chessBoardWidth);
@@ -53,9 +55,19 @@ void countAllKnightMoveTours(){
 	int i,j;
 	for(i=0 ; i<chessBoardHeight ; i++){
 		for(j=0 ; j<chessBoardWidth ; j++){
-			countKnightMovesFromOneCell(i, j, chessBoard);
+			if(tourIsPossible(i, j)){
+				countKnightMovesFromOneCell(i, j, chessBoard);
+			}
 		}
 	}
+}
+
+int tourIsPossible(int posInRow, int posInColumn){
+	if(((chessBoardWidth * chessBoardHeight)%2 != 0) 
+		&& ((posInRow + posInColumn)%2 != 0)){
+		return 0;
+	}
+	return 1;
 }
 
 int** initTwoDimentionalArray(int columns, int rows){
