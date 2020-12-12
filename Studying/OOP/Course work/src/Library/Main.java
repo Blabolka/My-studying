@@ -24,7 +24,7 @@ public class Main {
             System.out.println( "1. Add new publication to register\n" +
                                 "2. Delete publication from register\n" +
                                 "3. Get a list of all publications\n" +
-                                "4. Get a list of all publications sorted by print language\n" +
+                                "4. Get a list of all publications by language\n" +
                                 "5. Add new user to register\n" +
                                 "6. Delete user from register\n" +
                                 "7. Give publication to user\n" +

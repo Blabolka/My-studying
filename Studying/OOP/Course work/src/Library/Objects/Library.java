@@ -17,7 +17,7 @@ public class Library {
     private final PublicationRegister publicationRegister;
 
     public Library(String libraryName, Address address){
-        this.address = address;
+        this.address = new Address(address);
         this.libraryName = libraryName;
         publicationRegister = new PublicationRegister();
         userRegister = new UserRegister();

@@ -16,6 +16,13 @@ public class Address {
         this.houseNumber = houseNumber;
     }
 
+    public Address(Address address){
+        country = address.getCountry();
+        city = address.getCity();
+        street = address.getStreet();
+        houseNumber = address.getHouseNumber();
+    }
+
     public String getCountry() {
         return country;
     }

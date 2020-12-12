@@ -42,4 +42,5 @@ public class UserRegister implements IRegister<User> {
         }
         return -1;
     }
+
 }
