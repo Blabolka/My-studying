@@ -13,6 +13,10 @@ public class Book extends Publication {
         this.publicationYear = publicationYear;
     }
 
+    private PublicationType getType(){
+        return type;
+    }
+
     private int getPublicationYear() {
         return publicationYear;
     }

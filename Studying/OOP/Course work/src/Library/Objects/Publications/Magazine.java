@@ -15,6 +15,10 @@ public class Magazine extends Publication {
         this.publicationDay = publicationDay;
     }
 
+    private PublicationType getType(){
+        return type;
+    }
+
     private int getArticleCount() {
         return articleCount;
     }
