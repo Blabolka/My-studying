@@ -1,6 +1,8 @@
 package Library;
 
-import Library.Objects.Library;
+import Library.Objects.FileOperations.FileWriter;
+import Library.Objects.Register.Library;
+import Library.Objects.Register.OutputDataFormer;
 import Library.Objects.Persons.User;
 import Library.Objects.Publications.Book;
 import Library.Objects.Publications.Magazine;
@@ -8,13 +10,15 @@ import Library.Objects.Publications.Publication;
 import Library.Objects.Address;
 import Library.Objects.Register.PublicationRegisterPrinter;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         Address libraryAddress = new Address("Ukraine", "Kharkiv", "Klochkivska", "1337");
         Library library = new Library("Andrew Klochko Library", libraryAddress);
@@ -90,6 +94,13 @@ public class Main {
                     }
                     break;
                 case "8":
+                    String filePathToWritePublications = "src\\Library\\Files\\publications.csv";
+                    FileWriter fileWriterPublications = new FileWriter(new File(filePathToWritePublications));
+                    fileWriterPublications.write(OutputDataFormer.publicationsToCSV(library.getPublicationList()));
+
+                    String filePathToWriteUsers = "src\\Library\\Files\\users.csv";
+                    FileWriter fileWriterUsers = new FileWriter(new File(filePathToWriteUsers));
+                    fileWriterUsers.write(OutputDataFormer.usersToCSV(library.getUserList()));
                     break;
                 case "9":
                     break;
@@ -158,7 +169,7 @@ public class Main {
     }
 
     private static User addNewUser(){
-        User newUser = null;
+        User newUser;
 
         String id;
         String firstName;

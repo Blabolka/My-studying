@@ -4,6 +4,7 @@ public abstract class Publication {
 
     private static final String NEXT_LINE = System.lineSeparator();
 
+    private final PublicationType type;
     private final String id;
     private final String publisher;
     private final String title;
@@ -11,12 +12,17 @@ public abstract class Publication {
     private final String language;
     private boolean isInLibrary = true;
 
-    public Publication(String id, String publisher, String title, int pageCount, String language) {
+    public Publication(PublicationType type, String id, String publisher, String title, int pageCount, String language) {
+        this.type = type;
         this.id = id;
         this.publisher = publisher;
         this.title = title;
         this.pageCount = pageCount;
         this.language = language;
+    }
+
+    public PublicationType getType(){
+        return type;
     }
 
     public String getPublisher(){

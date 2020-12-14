@@ -4,10 +4,10 @@ public class Address {
 
     private static final String NEXT_LINE = System.lineSeparator();
 
-    private String country;
-    private String city;
-    private String street;
-    private String houseNumber;
+    private final String country;
+    private final String city;
+    private final String street;
+    private final String houseNumber;
 
     public Address(String country, String city, String street, String houseNumber) {
         this.country = country;

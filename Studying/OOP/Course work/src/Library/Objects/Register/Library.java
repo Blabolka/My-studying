@@ -1,5 +1,6 @@
-package Library.Objects;
+package Library.Objects.Register;
 
+import Library.Objects.Address;
 import Library.Objects.Persons.User;
 import Library.Objects.Publications.Publication;
 import Library.Objects.Register.PublicationRegister;
@@ -74,6 +75,10 @@ public class Library {
         return publicationRegister.getRegister();
     }
 
+    public void setPublicationList(List<Publication> list){
+        publicationRegister.setList(list);
+    }
+
     /*--------------------------------------------------------------*/
 
     public void addUser(User user){
@@ -90,6 +95,10 @@ public class Library {
 
     public List<User> getUserList(){
         return userRegister.getRegister();
+    }
+
+    public void setUserList(List<User> list){
+        userRegister.setList(list);
     }
 
     /*--------------------------------------------------------------*/

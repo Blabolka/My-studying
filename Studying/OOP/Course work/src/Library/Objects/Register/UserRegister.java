@@ -1,13 +1,14 @@
 package Library.Objects.Register;
 
 import Library.Objects.Persons.User;
+import Library.Objects.Publications.Publication;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserRegister {
 
-    private final List<User> list;
+    private List<User> list;
 
     public UserRegister(){
         list = new ArrayList<>();
@@ -41,6 +42,10 @@ public class UserRegister {
             }
         }
         return -1;
+    }
+
+    public void setList(List<User> list){
+        this.list = new ArrayList<>(list);
     }
 
 }

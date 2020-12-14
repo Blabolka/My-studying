@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PublicationRegister {
 
-    private final List<Publication> list;
+    private List<Publication> list;
 
     public PublicationRegister() {
         this.list = new ArrayList<>();
@@ -34,12 +34,16 @@ public class PublicationRegister {
         return new ArrayList<>(list);
     }
 
-    public int indexOf(String publicationId){
+    public int indexOf(String publicationId) {
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId().equals(publicationId)){
+            if (list.get(i).getId().equals(publicationId)) {
                 return i;
             }
         }
         return -1;
+    }
+
+    public void setList(List<Publication> list){
+        this.list = new ArrayList<>(list);
     }
 }
