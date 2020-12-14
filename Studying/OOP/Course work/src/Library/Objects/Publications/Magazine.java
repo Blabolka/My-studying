@@ -12,6 +12,11 @@ public class Magazine extends Publication {
         this.articleCount = articleCount;
         this.publicationDay = publicationDay;
     }
+    public Magazine(String id, String publisher, String name, int pageCount, String language, boolean isInLibrary, int articleCount, String publicationDay) {
+        super(PublicationType.MAGAZINE, id, publisher, name, pageCount, language, isInLibrary);
+        this.articleCount = articleCount;
+        this.publicationDay = publicationDay;
+    }
 
     public int getArticleCount() {
         return articleCount;

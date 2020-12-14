@@ -37,4 +37,12 @@ public abstract class Person{
     public String getBirthYear(){
         return birthYear;
     }
+
+    public String getDescription(){
+        return  "ID: " + getId() + NEXT_LINE +
+                "First name: " + getFirstName() + NEXT_LINE +
+                "Last name: " + getLastName() + NEXT_LINE +
+                "Patronymic: " + getPatronymic() + NEXT_LINE +
+                "Birth year: " + getBirthYear() + NEXT_LINE;
+    }
 }

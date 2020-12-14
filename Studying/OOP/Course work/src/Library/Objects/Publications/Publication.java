@@ -21,6 +21,16 @@ public abstract class Publication {
         this.language = language;
     }
 
+    public Publication(PublicationType type, String id, String publisher, String title, int pageCount, String language, boolean isInLibrary){
+        this.type = type;
+        this.id = id;
+        this.publisher = publisher;
+        this.title = title;
+        this.pageCount = pageCount;
+        this.language = language;
+        this.isInLibrary = isInLibrary;
+    }
+
     public PublicationType getType(){
         return type;
     }

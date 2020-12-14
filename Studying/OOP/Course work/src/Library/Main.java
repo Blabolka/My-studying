@@ -1,17 +1,15 @@
 package Library;
 
+import Library.Objects.FileOperations.FileReader;
 import Library.Objects.FileOperations.FileWriter;
-import Library.Objects.Register.Library;
-import Library.Objects.Register.OutputDataFormer;
+import Library.Objects.Register.*;
 import Library.Objects.Persons.User;
 import Library.Objects.Publications.Book;
 import Library.Objects.Publications.Magazine;
 import Library.Objects.Publications.Publication;
 import Library.Objects.Address;
-import Library.Objects.Register.PublicationRegisterPrinter;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -32,9 +30,10 @@ public class Main {
                                 "4. Get a list of all publications by language\n" +
                                 "5. Add new user to register\n" +
                                 "6. Delete user from register\n" +
-                                "7. Give publication to user\n" +
-                                "8. Save register to storage\n" +
-                                "9. Load register from storage\n" +
+                                "7. Get a list of all users\n" +
+                                "8. Give publication to user\n" +
+                                "9. Save register to storage\n" +
+                                "a. Load register from storage\n" +
                                 "0. Exit");
             choice = scanner.nextLine();
             switch (choice){
@@ -83,6 +82,10 @@ public class Main {
                     }
                     break;
                 case "7":
+                    UserRegisterPrinter userRegisterPrinter = new UserRegisterPrinter(library.getUserList());
+                    userRegisterPrinter.print();
+                    break;
+                case "8":
                     System.out.print("Enter the id of user: ");
                     String userId = scanner.nextLine();
                     System.out.print("Enter the id of publication: ");
@@ -93,7 +96,7 @@ public class Main {
                         System.out.println("Error with giving publication to user!");
                     }
                     break;
-                case "8":
+                case "9":
                     String filePathToWritePublications = "src\\Library\\Files\\publications.csv";
                     FileWriter fileWriterPublications = new FileWriter(new File(filePathToWritePublications));
                     fileWriterPublications.write(OutputDataFormer.publicationsToCSV(library.getPublicationList()));
@@ -102,7 +105,16 @@ public class Main {
                     FileWriter fileWriterUsers = new FileWriter(new File(filePathToWriteUsers));
                     fileWriterUsers.write(OutputDataFormer.usersToCSV(library.getUserList()));
                     break;
-                case "9":
+                case "a":
+                    String filePathToReadPublications = "src\\Library\\Files\\publications.csv";
+                    FileReader fileReaderPublications = new FileReader(new File(filePathToReadPublications));
+                    String readPublications = fileReaderPublications.read();
+                    library.setPublicationList(InputDataParser.parsePublicationsCSV(readPublications));
+
+                    String filePathToReadUsers = "src\\Library\\Files\\users.csv";
+                    FileReader fileReaderUsers = new FileReader(new File(filePathToReadUsers));
+                    String readUsers = fileReaderUsers.read();
+                    library.setUserList(InputDataParser.parseUsersCSV(readUsers));
                     break;
                 case "0":
                     exitStatus = true;

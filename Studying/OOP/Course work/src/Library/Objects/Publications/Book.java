@@ -11,12 +11,17 @@ public class Book extends Publication {
         this.publicationYear = publicationYear;
     }
 
+    public Book(String id, String publisher, String title, int pageCount, String language, boolean isInLibrary, int publicationYear) {
+        super(PublicationType.BOOK, id, publisher, title, pageCount, language, isInLibrary);
+        this.publicationYear = publicationYear;
+    }
+
     public int getPublicationYear() {
         return publicationYear;
     }
 
     public String getDescription(){
         return  super.getDescription() +
-                "Publication year: " +getPublicationYear() + NEXT_LINE;
+                "Publication year: " + getPublicationYear() + NEXT_LINE;
     }
 }

@@ -15,7 +15,7 @@ public class OutputDataFormer {
         StringBuilder csv = new StringBuilder();
 
         for (Publication p : publications) {
-            csv.append(p.getType()).append(";");
+            csv.append(p.getType().getTitle()).append(";");
             csv.append(p.getId()).append(";");
             csv.append(p.getPublisher()).append(";");
             csv.append(p.getTitle()).append(";");
