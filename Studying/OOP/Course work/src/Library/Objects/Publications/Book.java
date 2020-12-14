@@ -22,7 +22,8 @@ public class Book extends Publication {
     }
 
     public String getDescription(){
-        return  type.getTitle() + NEXT_LINE +
+        return  "git zaebal" +
+                type.getTitle() + NEXT_LINE +
                 super.getDescription() +
                 "Publication year: " +getPublicationYear() + NEXT_LINE;
     }
