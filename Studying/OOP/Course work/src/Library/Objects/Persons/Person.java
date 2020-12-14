@@ -1,6 +1,6 @@
 package Library.Objects.Persons;
 
-public abstract class Person {
+public abstract class Person{
 
     private static final String NEXT_LINE = System.lineSeparator();
 

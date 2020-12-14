@@ -5,7 +5,7 @@ import Library.Objects.Persons.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRegister implements IRegister<User> {
+public class UserRegister {
 
     private final List<User> list;
 

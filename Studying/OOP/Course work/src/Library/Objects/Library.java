@@ -70,7 +70,7 @@ public class Library {
         return publicationRegister.checkIfExist(publication);
     }
 
-    public List<Publication> getPublicationRegister(){
+    public List<Publication> getPublicationList(){
         return publicationRegister.getRegister();
     }
 
@@ -88,7 +88,7 @@ public class Library {
         return userRegister.checkIfExist(user);
     }
 
-    public List<User> getUserRegister(){
+    public List<User> getUserList(){
         return userRegister.getRegister();
     }
 

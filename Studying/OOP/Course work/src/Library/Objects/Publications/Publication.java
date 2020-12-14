@@ -8,15 +8,15 @@ public abstract class Publication {
     private final String publisher;
     private final String title;
     private final int pageCount;
-    private final String languageOfPublication;
+    private final String language;
     private boolean isInLibrary = true;
 
-    public Publication(String id, String publisher, String title, int pageCount, String printLanguage) {
+    public Publication(String id, String publisher, String title, int pageCount, String language) {
         this.id = id;
         this.publisher = publisher;
         this.title = title;
         this.pageCount = pageCount;
-        this.languageOfPublication = printLanguage;
+        this.language = language;
     }
 
     public String getPublisher(){
@@ -31,8 +31,8 @@ public abstract class Publication {
         return pageCount;
     }
 
-    public String getLanguageOfPublication() {
-        return languageOfPublication;
+    public String getLanguage() {
+        return language;
     }
 
     public String getId(){
@@ -52,6 +52,6 @@ public abstract class Publication {
                 "Publisher: " +getPublisher() + NEXT_LINE +
                 "Title: " +getTitle() + NEXT_LINE +
                 "Page count: " +getPageCount() + NEXT_LINE +
-                "Language of publication: " +getLanguageOfPublication() + NEXT_LINE;
+                "Language of publication: " + getLanguage() + NEXT_LINE;
     }
 }

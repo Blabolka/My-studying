@@ -6,8 +6,8 @@ public class Book extends Publication {
 
     private final int publicationYear;
 
-    public Book(String id, String publisher, String title, int pageCount, String languageOfPublication, int publicationYear) {
-        super(id, publisher, title, pageCount, languageOfPublication);
+    public Book(String id, String publisher, String title, int pageCount, String language, int publicationYear) {
+        super(id, publisher, title, pageCount, language);
         this.publicationYear = publicationYear;
     }
 
@@ -16,7 +16,9 @@ public class Book extends Publication {
     }
 
     public String getDescription(){
-        return  super.getDescription() +
+        String prefix = "Book: ";
+        return  prefix +
+                super.getDescription() +
                 "Publication year: " +getPublicationYear() + NEXT_LINE;
     }
 }

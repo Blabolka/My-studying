@@ -6,6 +6,7 @@ import Library.Objects.Publications.Book;
 import Library.Objects.Publications.Magazine;
 import Library.Objects.Publications.Publication;
 import Library.Objects.Address;
+import Library.Objects.Register.PublicationRegisterPrinter;
 
 import java.util.Scanner;
 
@@ -51,8 +52,14 @@ public class Main {
                     }
                     break;
                 case "3":
+                    PublicationRegisterPrinter printer = new PublicationRegisterPrinter(library.getPublicationList());
+                    printer.print();
                     break;
                 case "4":
+                    System.out.print("Enter the language of search publication: ");
+                    String language = scanner.nextLine();
+                    printer = new PublicationRegisterPrinter(library.getPublicationList());
+                    printer.printByLanguage(language);
                     break;
                 case "5":
                     User user = addNewUser();
@@ -103,7 +110,7 @@ public class Main {
         String publisher;
         String title;
         int pageCount;
-        String languageOfPublication;
+        String language;
 
         while(!exitStatus){
             System.out.println( "1. Book\n" +
@@ -120,10 +127,10 @@ public class Main {
                     System.out.print("Enter the page count: ");
                     pageCount = Integer.parseInt(scanner.nextLine());
                     System.out.print("Enter the language of publication: ");
-                    languageOfPublication = scanner.nextLine();
+                    language = scanner.nextLine();
                     System.out.print("Enter the publication year: ");
                     int publicationYear = Integer.parseInt(scanner.nextLine());
-                    publication = new Book(id, publisher, title, pageCount, languageOfPublication, publicationYear);
+                    publication = new Book(id, publisher, title, pageCount, language, publicationYear);
                     exitStatus = true;
                     break;
                 case "2":
@@ -136,12 +143,12 @@ public class Main {
                     System.out.print("Enter the page count: ");
                     pageCount = Integer.parseInt(scanner.nextLine());
                     System.out.print("Enter the language of publication: ");
-                    languageOfPublication = scanner.nextLine();
+                    language = scanner.nextLine();
                     System.out.print("Enter the article count: ");
                     int articleCount = Integer.parseInt(scanner.nextLine());
                     System.out.print("Enter the publication day: ");
                     String publicationDay = scanner.nextLine();
-                    publication = new Magazine(id, publisher, title, pageCount, languageOfPublication, articleCount, publicationDay);
+                    publication = new Magazine(id, publisher, title, pageCount, language, articleCount, publicationDay);
                     exitStatus = true;
                     break;
             }

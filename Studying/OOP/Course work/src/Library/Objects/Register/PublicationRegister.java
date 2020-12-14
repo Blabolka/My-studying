@@ -5,7 +5,7 @@ import Library.Objects.Publications.Publication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PublicationRegister implements IRegister<Publication> {
+public class PublicationRegister {
 
     private final List<Publication> list;
 
