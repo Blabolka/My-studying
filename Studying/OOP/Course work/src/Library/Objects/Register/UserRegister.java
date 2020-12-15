@@ -35,16 +35,16 @@ public class UserRegister {
         return new ArrayList<>(list);
     }
 
-    public int indexOf(String userId){
+    public int indexOf(String id){
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId().equals(userId)){
+            if(list.get(i).getId().equals(id)){
                 return i;
             }
         }
         return -1;
     }
 
-    public void setList(List<User> list){
+    public void setRegister(List<User> list){
         this.list = new ArrayList<>(list);
     }
 

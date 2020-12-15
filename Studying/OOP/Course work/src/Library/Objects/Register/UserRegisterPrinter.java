@@ -12,8 +12,7 @@ public class UserRegisterPrinter {
         this.users = users;
     }
 
-    public void print(){
+    public void printAll(){
         users.forEach(p -> System.out.println(p.getDescription()));
     }
-
 }

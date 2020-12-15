@@ -12,7 +12,7 @@ public class PublicationRegisterPrinter {
         this.publications = publications;
     }
 
-    public void print(){
+    public void printAll(){
         publications.forEach(p -> System.out.println(p.getDescription()));
     }
 

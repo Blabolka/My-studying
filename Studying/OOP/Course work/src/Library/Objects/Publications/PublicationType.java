@@ -4,7 +4,7 @@ public enum PublicationType {
     BOOK("Book"),
     MAGAZINE("Magazine");
 
-    private String title;
+    private final String title;
 
     PublicationType(String title){
         this.title = title;

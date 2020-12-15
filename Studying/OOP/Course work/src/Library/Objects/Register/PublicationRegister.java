@@ -34,9 +34,9 @@ public class PublicationRegister {
         return new ArrayList<>(list);
     }
 
-    public int indexOf(String publicationId) {
+    public int indexOf(String id) {
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId().equals(publicationId)) {
+            if (list.get(i).getId().equals(id)) {
                 return i;
             }
         }

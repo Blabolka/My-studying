@@ -57,7 +57,7 @@ public class Main {
                     break;
                 case "3":
                     PublicationRegisterPrinter printer = new PublicationRegisterPrinter(library.getPublicationList());
-                    printer.print();
+                    printer.printAll();
                     break;
                 case "4":
                     System.out.print("Enter the language of search publication: ");
@@ -84,7 +84,7 @@ public class Main {
                     break;
                 case "7":
                     UserRegisterPrinter userRegisterPrinter = new UserRegisterPrinter(library.getUserList());
-                    userRegisterPrinter.print();
+                    userRegisterPrinter.printAll();
                     break;
                 case "8":
                     System.out.print("Enter the id of user: ");

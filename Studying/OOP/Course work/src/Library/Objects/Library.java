@@ -97,7 +97,7 @@ public class Library {
     }
 
     public void setUserList(List<User> list){
-        userRegister.setList(list);
+        userRegister.setRegister(list);
     }
 
     /*--------------------------------------------------------------*/

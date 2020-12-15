@@ -38,6 +38,10 @@ public abstract class Publication {
         return type;
     }
 
+    public String getId(){
+        return id;
+    }
+
     public String getPublisher(){
         return publisher;
     }
@@ -58,16 +62,12 @@ public abstract class Publication {
         return language;
     }
 
-    public String getId(){
-        return id;
+    public boolean isInLibrary() {
+        return isInLibrary;
     }
 
     public void setIsInLibraryState(boolean state){
         isInLibrary = state;
-    }
-
-    public boolean isInLibrary() {
-        return isInLibrary;
     }
 
     public String getDescription(){
