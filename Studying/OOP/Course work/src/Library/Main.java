@@ -100,22 +100,22 @@ public class Main {
                 case "9":
                     String filePathToWritePublications = "src\\Library\\Files\\publications.csv";
                     FileWriter fileWriterPublications = new FileWriter(new File(filePathToWritePublications));
-                    fileWriterPublications.write(OutputDataFormer.publicationsToCSV(library.getPublicationList()));
+                    fileWriterPublications.write(OutputDataFormer.publicationsToCSV(library.getPublicationList(), ';'));
 
                     String filePathToWriteUsers = "src\\Library\\Files\\users.csv";
                     FileWriter fileWriterUsers = new FileWriter(new File(filePathToWriteUsers));
-                    fileWriterUsers.write(OutputDataFormer.usersToCSV(library.getUserList()));
+                    fileWriterUsers.write(OutputDataFormer.usersToCSV(library.getUserList(), ';'));
                     break;
                 case "a":
                     String filePathToReadPublications = "src\\Library\\Files\\publications.csv";
                     FileReader fileReaderPublications = new FileReader(new File(filePathToReadPublications));
                     String readPublications = fileReaderPublications.read();
-                    library.setPublicationList(InputDataParser.parsePublicationsCSV(readPublications));
+                    library.setPublicationList(InputDataParser.parsePublicationsCSV(readPublications, ';'));
 
                     String filePathToReadUsers = "src\\Library\\Files\\users.csv";
                     FileReader fileReaderUsers = new FileReader(new File(filePathToReadUsers));
                     String readUsers = fileReaderUsers.read();
-                    library.setUserList(InputDataParser.parseUsersCSV(readUsers));
+                    library.setUserList(InputDataParser.parseUsersCSV(readUsers, ';'));
                     break;
                 case "0":
                     exitStatus = true;

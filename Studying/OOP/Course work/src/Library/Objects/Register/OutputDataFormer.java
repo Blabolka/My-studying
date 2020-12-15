@@ -11,22 +11,22 @@ public class OutputDataFormer {
 
     private final static String NEXT_LINE = System.lineSeparator();
 
-    public static String publicationsToCSV(List<Publication> publications){
+    public static String publicationsToCSV(List<Publication> publications, char separator){
         StringBuilder csv = new StringBuilder();
 
         for (Publication p : publications) {
-            csv.append(p.getType().getTitle()).append(";");
-            csv.append(p.getId()).append(";");
-            csv.append(p.getPublisher()).append(";");
-            csv.append(p.getAuthor()).append(";");
-            csv.append(p.getTitle()).append(";");
-            csv.append(p.getPageCount()).append(";");
-            csv.append(p.getLanguage()).append(";");
-            csv.append(p.isInLibrary()).append(";");
+            csv.append(p.getType().getTitle()).append(separator);
+            csv.append(p.getId()).append(separator);
+            csv.append(p.getPublisher()).append(separator);
+            csv.append(p.getAuthor()).append(separator);
+            csv.append(p.getTitle()).append(separator);
+            csv.append(p.getPageCount()).append(separator);
+            csv.append(p.getLanguage()).append(separator);
+            csv.append(p.isInLibrary()).append(separator);
             if(p instanceof Book){
                 csv.append(((Book) p).getPublicationYear());
             }else if(p instanceof Magazine){
-                csv.append(((Magazine) p).getArticleCount()).append(";");
+                csv.append(((Magazine) p).getArticleCount()).append(separator);
                 csv.append(((Magazine) p).getPublicationDay());
             }
             csv.append(NEXT_LINE);
@@ -35,15 +35,15 @@ public class OutputDataFormer {
         return csv.toString();
     }
 
-    public static String usersToCSV(List<User> users){
+    public static String usersToCSV(List<User> users, char separator){
         StringBuilder csv = new StringBuilder();
         
         for (User u : users) {
-            csv.append(u.getId()).append(";");
-            csv.append(u.getFirstName()).append(";");
-            csv.append(u.getLastName()).append(";");
-            csv.append(u.getPatronymic()).append(";");
-            csv.append(u.getBirthYear()).append(";");
+            csv.append(u.getId()).append(separator);
+            csv.append(u.getFirstName()).append(separator);
+            csv.append(u.getLastName()).append(separator);
+            csv.append(u.getPatronymic()).append(separator);
+            csv.append(u.getBirthYear()).append(separator);
             csv.append(u.getTakenPublicationsId().toString());
             csv.append(NEXT_LINE);
         }

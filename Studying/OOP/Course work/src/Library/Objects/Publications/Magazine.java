@@ -27,7 +27,12 @@ public class Magazine extends Publication {
     }
 
     public String getDescription(){
-        return  super.getDescription() +
+        return  "ID: " + getId() + NEXT_LINE +
+                "Publisher: " + getPublisher() + NEXT_LINE +
+                "Author: " + getAuthor() + NEXT_LINE +
+                "Title: " + getTitle() + NEXT_LINE +
+                "Page count: " + getPageCount() + NEXT_LINE +
+                "Language of publication: " + getLanguage() + NEXT_LINE +
                 "Article count: " +getArticleCount() + NEXT_LINE +
                 "Publication day: " +getPublicationDay();
     }

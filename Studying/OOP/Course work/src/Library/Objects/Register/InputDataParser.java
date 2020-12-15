@@ -13,13 +13,13 @@ import java.util.List;
 
 public class InputDataParser {
 
-    public static List<Publication> parsePublicationsCSV(String publications){
+    public static List<Publication> parsePublicationsCSV(String publications, char separator){
 
         List<Publication> list = new ArrayList<>();
         String[] splitByRow = StringUtils.split(publications, System.lineSeparator());
 
         for (String s : splitByRow) {
-            String[] row = StringUtils.split(s, ";");
+            String[] row = StringUtils.split(s, separator);
 
             Publication newPublication;
 
@@ -47,13 +47,13 @@ public class InputDataParser {
         return list;
     }
 
-    public static List<User> parseUsersCSV(String users){
+    public static List<User> parseUsersCSV(String users, char separator){
 
         List<User> list = new ArrayList<>();
         String[] splitByRow = StringUtils.split(users, System.lineSeparator());
 
         for (String s : splitByRow) {
-            String[] row = StringUtils.split(s,";");
+            String[] row = StringUtils.split(s,separator);
 
             User newUser;
 
