@@ -26,19 +26,20 @@ public class InputDataParser {
             PublicationType type = PublicationType.parsePublicationType(row[0]);
             String id = row[1];
             String publisher = row[2];
-            String title = row[3];
-            int pageCount = Integer.parseInt(row[4]);
-            String language = row[5];
-            boolean isInLibrary = Boolean.parseBoolean(row[6]);
+            String author = row[3];
+            String title = row[4];
+            int pageCount = Integer.parseInt(row[5]);
+            String language = row[6];
+            boolean isInLibrary = Boolean.parseBoolean(row[7]);
 
             if (type == PublicationType.BOOK) {
-                int publicationYear = Integer.parseInt(row[7]);
-                newPublication = new Book(id, publisher, title, pageCount, language, isInLibrary, publicationYear);
+                int publicationYear = Integer.parseInt(row[8]);
+                newPublication = new Book(id, publisher, author, title, pageCount, language, isInLibrary, publicationYear);
                 list.add(newPublication);
             } else if (type == PublicationType.MAGAZINE) {
-                int articleCount = Integer.parseInt(row[7]);
-                String publicationDay = row[8];
-                newPublication = new Magazine(id, publisher, title, pageCount, language, isInLibrary, articleCount, publicationDay);
+                int articleCount = Integer.parseInt(row[8]);
+                String publicationDay = row[9];
+                newPublication = new Magazine(id, publisher, author, title, pageCount, language, isInLibrary, articleCount, publicationDay);
                 list.add(newPublication);
             }
         }

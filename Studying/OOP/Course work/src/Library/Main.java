@@ -2,6 +2,7 @@ package Library;
 
 import Library.Objects.FileOperations.FileReader;
 import Library.Objects.FileOperations.FileWriter;
+import Library.Objects.Library;
 import Library.Objects.Register.*;
 import Library.Objects.Persons.User;
 import Library.Objects.Publications.Book;
@@ -131,6 +132,7 @@ public class Main {
 
         String id;
         String publisher;
+        String author;
         String title;
         int pageCount;
         String language;
@@ -145,6 +147,8 @@ public class Main {
                     id = scanner.nextLine();
                     System.out.print("Enter the publisher: ");
                     publisher = scanner.nextLine();
+                    System.out.print("Enter the author: ");
+                    author = scanner.nextLine();
                     System.out.print("Enter the title: ");
                     title = scanner.nextLine();
                     System.out.print("Enter the page count: ");
@@ -153,7 +157,7 @@ public class Main {
                     language = scanner.nextLine();
                     System.out.print("Enter the publication year: ");
                     int publicationYear = Integer.parseInt(scanner.nextLine());
-                    publication = new Book(id, publisher, title, pageCount, language, publicationYear);
+                    publication = new Book(id, publisher, author, title, pageCount, language, publicationYear);
                     exitStatus = true;
                     break;
                 case "2":
@@ -161,6 +165,8 @@ public class Main {
                     id = scanner.nextLine();
                     System.out.print("Enter the publisher: ");
                     publisher = scanner.nextLine();
+                    System.out.print("Enter the author");
+                    author = scanner.nextLine();
                     System.out.print("Enter the title: ");
                     title = scanner.nextLine();
                     System.out.print("Enter the page count: ");
@@ -171,7 +177,7 @@ public class Main {
                     int articleCount = Integer.parseInt(scanner.nextLine());
                     System.out.print("Enter the publication day: ");
                     String publicationDay = scanner.nextLine();
-                    publication = new Magazine(id, publisher, title, pageCount, language, articleCount, publicationDay);
+                    publication = new Magazine(id, publisher, author, title, pageCount, language, articleCount, publicationDay);
                     exitStatus = true;
                     break;
             }
