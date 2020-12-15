@@ -6,13 +6,13 @@ public class Book extends Publication {
 
     private final int publicationYear;
 
-    public Book(String id, String publisher, String title, int pageCount, String language, int publicationYear) {
-        super(PublicationType.BOOK, id, publisher, title, pageCount, language);
+    public Book(String id, String publisher, String author, String title, int pageCount, String language, int publicationYear) {
+        super(PublicationType.BOOK, id, publisher, author, title, pageCount, language);
         this.publicationYear = publicationYear;
     }
 
-    public Book(String id, String publisher, String title, int pageCount, String language, boolean isInLibrary, int publicationYear) {
-        super(PublicationType.BOOK, id, publisher, title, pageCount, language, isInLibrary);
+    public Book(String id, String publisher, String author, String title, int pageCount, String language, boolean isInLibrary, int publicationYear) {
+        super(PublicationType.BOOK, id, publisher, author, title, pageCount, language, isInLibrary);
         this.publicationYear = publicationYear;
     }
 

@@ -18,6 +18,7 @@ public class OutputDataFormer {
             csv.append(p.getType().getTitle()).append(";");
             csv.append(p.getId()).append(";");
             csv.append(p.getPublisher()).append(";");
+            csv.append(p.getAuthor()).append(";");
             csv.append(p.getTitle()).append(";");
             csv.append(p.getPageCount()).append(";");
             csv.append(p.getLanguage()).append(";");

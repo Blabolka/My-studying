@@ -1,6 +1,5 @@
-package Library.Objects.Register;
+package Library.Objects;
 
-import Library.Objects.Address;
 import Library.Objects.Persons.User;
 import Library.Objects.Publications.Publication;
 import Library.Objects.Register.PublicationRegister;
