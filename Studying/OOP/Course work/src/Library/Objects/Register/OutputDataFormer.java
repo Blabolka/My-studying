@@ -44,10 +44,27 @@ public class OutputDataFormer {
             csv.append(u.getLastName()).append(separator);
             csv.append(u.getPatronymic()).append(separator);
             csv.append(u.getBirthYear()).append(separator);
-            csv.append(u.getTakenPublicationsId().toString());
+            csv.append(toArrayString(u.getTakenPublicationsId()));
             csv.append(NEXT_LINE);
         }
 
         return csv.toString();
+    }
+
+    private static String toArrayString(List<String> list){
+        StringBuilder publications = new StringBuilder();
+
+        publications.append('[');
+
+        for (int i = 0; i < list.size(); i++) {
+            if(i != list.size()-1){
+                publications.append(list.get(i)).append(';');
+            }else{
+                publications.append(list.get(i));
+            }
+
+        }
+        publications.append(']');
+        return publications.toString();
     }
 }

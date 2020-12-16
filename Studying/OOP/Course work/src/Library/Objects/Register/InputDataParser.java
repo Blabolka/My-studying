@@ -63,7 +63,7 @@ public class InputDataParser {
             String patronymic = row[3];
             String birthYear = row[4];
 
-            String[] takenPublications = StringUtils.split(row[5], ",[]");
+            String[] takenPublications = StringUtils.split(row[5], "[;]");
             List<String> takenPublicationsId = new ArrayList<>(Arrays.asList(takenPublications));
 
             newUser = new User(id, firstName, lastName, patronymic, birthYear, takenPublicationsId);
