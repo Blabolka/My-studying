@@ -27,11 +27,11 @@ void print_array(int size, int* array);
 int main() {
 	
 	int primeNumber = 31;
-	int privateKey[] = {2,3,6,13,27,52,105,210};
+	int privateKey[] = {2,4,9,18,35,69,140,377};
 	int mod = calculateNearestEvenNumber(sumPrivateKeyElements(privateKey));
 	int* publicKey = calculatePublicKey(primeNumber, mod, privateKey);
 	
-	char* string = "Sanya hui sosi";
+	char* string = "hello";
 	
 	/*Encrypting*/
 	int* encryptedString = encrypt(string, publicKey);
